@@ -1,0 +1,163 @@
+option optimize_for = LITE_RUNTIME;
+//cmd:user
+
+//////////
+//user:login
+//////////
+//用户登录请求
+message CUserLoginReq
+{
+    optional string username = 1; //用户名
+    optional string passwd = 2; //密码
+    optional bytes im_token = 3; //im access_token 优先登录
+    optional string sid = 4; //兼容口袋和微店老用户登录，用户ID
+    optional string uss = 5; //兼容口袋和微店老用户登录kdss和wdss
+    optional string client_version = 6; //客户端版本，用于统计和分析用
+    optional bytes device_token = 7; //IOS的设备token，用于推送
+}
+//device_token format
+//{
+//   mipush:"小米",
+//   gtpush:"个推",
+//   xgpush:"信鸽"
+//}
+//*0101*
+enum EConstPBUserLoginRespCodes
+{
+   PB_USER_LOGIN_RESP_PASSWD_ERROR = 401011; //密码错误
+   PB_USER_LOGIN_RESP_USER_NOT_EXIST = 401012; //用户不存在
+   PB_USER_LOGIN_RESP_SESSION_ERROR = 401013; //会话标识错误
+   PB_USER_LOGIN_RESP_COOKIE_ERROR = 401014; //cookie错误
+}
+
+//用户登录响应
+message CUserLoginResp
+{
+    optional uint64 uid = 1; //用户id
+    optional string username = 2; //游客登录成功后得到的显示名称
+    optional string im_token = 3;//登录成功后取到的验证session
+}
+
+//////////
+//user:logout
+//////////
+//登出无须pb协议，直接通过协议头部标识
+
+//////////
+//user:logout_by_sid
+//////////
+message CUserLogoutBySidReq
+{
+    optional string sid = 1;
+    optional string uss = 2;
+}
+message CUserLogoutBySidResp
+{
+    
+}
+
+enum EConstPBUserInfoFields
+{
+	PB_USER_INFO_FIELD_STATU_TYPE      = 1;//当前状态
+	PB_USER_INFO_FIELD_NICK_NAME       = 2;//昵称
+	PB_USER_INFO_FIELD_LOGIN_POLICY    = 3;//是否允许多终端登陆
+    PB_USER_INFO_FIELD_SID             = 4;//根据uid查询sid
+    PB_USER_INFO_FIELD_CREATE_TIME     = 5;//创建时间
+	//不要改变顺序,递增添加
+}
+
+
+
+//////////
+//user:query
+/////////
+message CUserQueryReq
+{
+	repeated uint64 uids 	= 1;
+	repeated uint32 fields	= 2; 
+}
+message CFieldInfo
+{
+	optional uint32 field = 1;
+	optional string value = 2;
+}
+message CUserInfo
+{
+	optional uint64 uid = 1;
+	repeated CFieldInfo infos = 2;
+}
+
+message CUserQueryResp
+{
+	repeated CUserInfo user_infos = 2;
+}
+
+
+//////////
+//user:exchange_uid
+/////////
+message CUserExchangeUIDReq
+{
+    optional string sid    = 1;
+}
+message CUserExchangeUIDResp
+{
+    optional uint64 uid    = 1;
+}
+
+
+//////////
+//user:set_info
+//////////
+message CUserSetInfoReq
+{
+	optional uint64 uid = 1;
+	repeated CFieldInfo infos = 2;
+}
+message CUserSetInfoResp
+{
+}
+
+enum EConstLoginPolicys
+{
+	MSG_POLICY_ENABLE_MULTILOGIN = 1; //允许多终端登录
+	MSG_POLICY_DISABLE_MULTILOGIN = 2; //禁止多终端登录
+}
+
+//用户在线状态，只分为在线，离线，IOS后台在线
+enum StatusTypes
+{
+    StatusOnline= 1; //在线
+    StatusOffline= 2; //离线
+    StatusBackgroundOnline = 3; //手机后台在线
+}
+
+//////////
+//user:kickout
+//////////
+//踢出原因
+enum KickoutReason
+{
+    REASON_RELOGIN = 1; //重登录
+    REASON_OTHER = 2; //其它原因
+}
+
+message CUserKickoutNotify
+{
+    optional KickoutReason reason = 1;
+    optional uint32 from_source_type = 2;
+}
+
+//////////
+//user:get_vcode
+//////////
+
+message CUserGetVCodeReq
+{
+    
+}
+message CUserGetVCodeResp
+{
+    optional bytes vcode_session = 1;
+    optional bytes vcode_picdata = 2;
+}

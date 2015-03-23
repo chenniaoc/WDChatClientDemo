@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		893899D51AC029030003B0B2 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
 		898D41ED1AB7C480004A4303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EC1AB7C480004A4303 /* main.m */; };
 		898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EF1AB7C480004A4303 /* AppDelegate.m */; };
 		898D41F31AB7C480004A4303 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41F21AB7C480004A4303 /* ViewController.m */; };
@@ -18,6 +19,10 @@
 		898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
 		898D421B1AB7CC1F004A4303 /* WDHandshakeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421A1AB7CC1F004A4303 /* WDHandshakeAPI.m */; };
 		898D421E1AB7CC6D004A4303 /* WDOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */; };
+		89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
+		89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
+		89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43081AC0251D001DB012 /* Msg.pb.m */; };
+		89FF430E1AC0251D001DB012 /* User.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF430A1AC0251D001DB012 /* User.pb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
 		898D41E71AB7C480004A4303 /* WDChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898D41EB1AB7C480004A4303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		898D41EC1AB7C480004A4303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,6 +59,14 @@
 		898D421A1AB7CC1F004A4303 /* WDHandshakeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHandshakeAPI.m; sourceTree = "<group>"; };
 		898D421C1AB7CC6D004A4303 /* WDOutputStreamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDOutputStreamData.h; sourceTree = "<group>"; };
 		898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDOutputStreamData.m; sourceTree = "<group>"; };
+		89FF43031AC0251D001DB012 /* Follow.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.pb.h; sourceTree = "<group>"; };
+		89FF43041AC0251D001DB012 /* Follow.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follow.pb.m; sourceTree = "<group>"; };
+		89FF43051AC0251D001DB012 /* Im_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Im_base.pb.h; sourceTree = "<group>"; };
+		89FF43061AC0251D001DB012 /* Im_base.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Im_base.pb.m; sourceTree = "<group>"; };
+		89FF43071AC0251D001DB012 /* Msg.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Msg.pb.h; sourceTree = "<group>"; };
+		89FF43081AC0251D001DB012 /* Msg.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Msg.pb.m; sourceTree = "<group>"; };
+		89FF43091AC0251D001DB012 /* User.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.pb.h; sourceTree = "<group>"; };
+		89FF430A1AC0251D001DB012 /* User.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.pb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893899D51AC029030003B0B2 /* ProtocolBuffers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +91,8 @@
 		898D41DE1AB7C480004A4303 = {
 			isa = PBXGroup;
 			children = (
+				893899D41AC029030003B0B2 /* ProtocolBuffers.framework */,
+				89FF43021AC0251D001DB012 /* ProtoBuf */,
 				898D42141AB7C4F4004A4303 /* Network */,
 				898D42101AB7C4CD004A4303 /* TCP */,
 				898D41E91AB7C480004A4303 /* WDChatDemo */,
@@ -155,6 +172,21 @@
 				898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		89FF43021AC0251D001DB012 /* ProtoBuf */ = {
+			isa = PBXGroup;
+			children = (
+				89FF43031AC0251D001DB012 /* Follow.pb.h */,
+				89FF43041AC0251D001DB012 /* Follow.pb.m */,
+				89FF43051AC0251D001DB012 /* Im_base.pb.h */,
+				89FF43061AC0251D001DB012 /* Im_base.pb.m */,
+				89FF43071AC0251D001DB012 /* Msg.pb.h */,
+				89FF43081AC0251D001DB012 /* Msg.pb.m */,
+				89FF43091AC0251D001DB012 /* User.pb.h */,
+				89FF430A1AC0251D001DB012 /* User.pb.m */,
+			);
+			path = ProtoBuf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				898D42131AB7C4CD004A4303 /* GCDAsyncSocket.m in Sources */,
+				89FF430E1AC0251D001DB012 /* User.pb.m in Sources */,
+				89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */,
+				89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */,
 				898D41F31AB7C480004A4303 /* ViewController.m in Sources */,
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
+				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,
 				898D421B1AB7CC1F004A4303 /* WDHandshakeAPI.m in Sources */,
 				898D421E1AB7CC6D004A4303 /* WDOutputStreamData.m in Sources */,
 				898D41ED1AB7C480004A4303 /* main.m in Sources */,
@@ -387,6 +423,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
 				INFOPLIST_FILE = WDChatDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -397,6 +437,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
 				INFOPLIST_FILE = WDChatDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

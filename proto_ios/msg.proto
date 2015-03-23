@@ -1,0 +1,245 @@
+option optimize_for = LITE_RUNTIME;
+//cmd:msg 
+
+//////////
+//msg:send + send_notify
+//////////
+//发送消息请求和消息通知的协议
+//
+//detail
+//json:{
+//    "goodsId":"100",//如果是买家，当前正在浏览的商品ID
+//    ...TO DO
+//}
+message CMsgPBContent
+{
+    optional uint32 from_source_type 		= 1; //消息发送方客户端类型
+    optional uint32 to_source_type		    = 2; //接收方客户端类型
+    optional uint64 from_uid 			    = 3; //消息发送方用户id
+    optional uint64 to_uid 			        = 4; //消息接收方用户id
+    optional uint64 time 			        = 5; //消息时间戳
+    optional uint64 msgid 			        = 6; //消息id，用于排序和去重
+    optional uint32 msg_type 			    = 7; //消息类型，如自动回复，商家打招呼语等
+    optional uint32 msg_media_type 		    = 8; //消息媒体类型，如语音，图片，文本 
+    optional uint32 sync_flag  			    = 9; //同步标识
+    optional string msg_data 			    = 10;//消息内容
+    optional string detail                  = 11;
+}
+
+enum EConstMsgTypes
+{
+	MSG_TYPE_NORMAL 	=1;	//默认消息
+	MSG_TYPE_AOTOMSG 	=2;	//自动回复
+}
+
+//消息媒体类型
+enum EConstMsgMediaTypes
+{
+	MSG_MEDIA_TYPE_TEXT = 1; //文本消息
+	MSG_MEDIA_TYPE_IMG = 2; //图片消息
+	MSG_MEDIA_TYPE_AUDIO = 3; //语音消息
+}
+
+//发送消息响应码
+enum EConstPBMsgSendRespCodes
+{
+   PB_MSG_SEND_RESP_USER_BLOCKED = 402011; //被拉黑
+}
+
+message CMsgSendResp
+{
+}
+
+//////////
+//msg:send_ack + ack_notify
+//////////
+//消息确认请求和消息确认通知的协议
+message CMsgAckContent
+{
+    optional uint32 ack_source_type = 1; //要确认的消息的发送方客户端类型
+    optional uint64 ack_uid = 2; //要确认的消息发送方用户id
+    optional uint64 ack_msgid = 3; //要确认的消息的消息id
+}
+
+message CMsgSendAckResp
+{
+}
+
+//////////
+//msg:cm + cm_notify
+//////////
+//通用消息请求和通用消息通知的协议，因通用消息非关键业务，无须消息确认
+//通用消息，举例如：“对方正在输入……”的通知
+message CMsgCommonReq
+{
+	optional uint32 from_source_type = 1; //通用消息发送方客户端类型
+    optional uint64 from_uid = 2; //通用消息发送方用户id
+    optional uint64 to_uid = 3; //通用消息接收方用户id
+    optional uint64 time = 4; //通用消息时间
+    optional uint64 msgid = 5;  //通用消息id，用于排序及去重
+    optional uint32 msg_type = 6; //通用消息类型
+    optional bytes msg_data = 7; //通用消息内容
+}
+
+message CMsgCommonResp
+{
+}
+
+//////////
+//msg:get_offline_msg
+//////////
+//拉取离线消息请求
+message CMsgGetOfflineMsgReq
+{
+	optional uint32 msg_type = 1; //拉取的消息类型，比如是拉取系统通知还是聊天消息
+    optional uint32 limit = 2; //本次拉多少条
+    optional uint64 start_msgid = 3; //上次最后拉到的消息id
+    optional uint64 start_time = 4; //上次最后拉到的消息时间戳
+}
+
+
+//拉取离线消息响应
+message CMsgGetOfflineMsgResp
+{
+    repeated bytes msgs = 1; //消息条目数组  msgs中每个元素为完整的pb data
+    optional uint32 msg_type = 2;
+    optional uint64 last_msgid = 3; //最后一条的消息id
+    optional uint64 last_time = 4; //最后一条消息的时间
+}
+
+//////////
+//msg:get_offline_msg_ack
+//////////
+//拉取离线消息确认请求
+message CMsgGetOfflineMsgAckReq
+{
+    optional uint32 msg_type = 1;
+    optional uint64 ack_msg_id = 2; //确认自己收到的最后一条消息的消息id
+}
+
+//拉取离线消息确认响应
+message CMsgGetOfflineMsgAckResp
+{
+}
+//////////
+//msg:clear_offline_msg_by_uid
+//////////
+//清除某用户的离线消息
+message CMsgClearOfflineByUidReq
+{
+    optional uint64 uid      = 1;
+    optional uint32 msg_type = 2;
+}
+message CMsgClearOfflineByUidResp
+{
+    
+}
+//////////
+//msg:get_offline_count_by_uid
+//////////
+//获取某用户离线消息数量
+message CMsgGetOfflineCountByUidReq
+{
+    repeated uint64 uids      = 1;
+    optional uint32 msg_type = 2;
+}
+message CMsgOfflineCountInfo
+{
+    optional uint64 uid      = 1;
+    optional uint32 count    = 2;
+}
+message CMsgGetOfflineCountByUidResp
+{
+    repeated CMsgOfflineCountInfo count_infos    = 1;
+}
+
+///////////
+//msg:get_offline_count
+//////////
+//获取未读离线消息总数量
+message CMsgGetOfflineCountReq
+{
+}
+message CMsgGetOfflineCountResp
+{
+	optional uint32 msg_count = 1;
+}
+
+
+//////////获取历史记录
+//msg:get_history_msg
+//////////
+message CMsgGetHistoryMsgReq
+{
+    optional uint64 uid = 1;
+    optional uint32 limit = 2;
+    optional uint64 start_msgtime = 3;
+    optional uint64 start_msgid = 4;
+}
+message CMsgGetHistoryMsgResp
+{
+    repeated CMsgPBContent msgs = 1;
+    optional uint64 last_msgtime = 2;
+    optional uint64 last_msgid = 3;
+}
+
+//////////获取最近聊天记录
+//msg:get_latest_msg
+//////////
+message CMsgGetLatestMsgReq
+{
+    optional uint64 uid = 1;
+    optional uint32 limit = 2;
+    optional uint64 start_msgtime = 3;
+    optional uint64 start_msgid = 4;
+}
+message CMsgGetLatestMsgResp
+{
+    repeated CMsgPBContent msgs = 1;
+    optional uint64 last_msgtime = 2;
+    optional uint64 last_msgid = 3;
+}
+
+//////////
+//msg:push
+//////////
+//IM内消息推送通知
+message CMsgPushNotify
+{
+    optional uint64 from_uid = 1; //推送发送方用户id
+    optional uint64 to_uid = 2; //推送接收方用户id
+    optional uint64 msg_id = 3; //推送消息id
+    optional uint64 time = 4; //推送消息时间
+    optional uint32 msg_type = 5; //推送消息类型
+    optional bytes msg_data = 6; //推送消息内容
+}
+
+//////////
+//msg:merge
+//////////
+//合并消息
+message CMsgMergeMsgReq
+{
+    optional string merge_imtoken = 1; 
+}
+message CMsgMergeMsgResp
+{
+}
+
+//////////
+//msg:clear_unread
+//////////
+//清除某用户的未读消息
+message CMsgClearUnreadByUidReq
+{
+    optional uint64 uid      = 1;
+}
+message CMsgClearUnreadByUidResp
+{
+    
+}
+
+
+
+
+

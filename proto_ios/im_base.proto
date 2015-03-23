@@ -1,0 +1,77 @@
+option optimize_for = LITE_RUNTIME;
+//客户端类型
+enum EConstSourceTypes
+{
+    CLIENT_TYPE_UNKNOWN                 = 0;
+
+    CLIENT_TYPE_PC_HTML                 = 1001;
+
+    CLIENT_TYPE_IPHONE_WEIDIAN          = 2001;
+    CLIENT_TYPE_IPHONE_KOUDAI           = 2002;
+    CLIENT_TYPE_IPHONE_BANJIA           = 2003;
+    CLIENT_TYPE_IPHONE_DAIGOU           = 2004;
+    CLIENT_TYPE_IPHONE_WEIDIAN_BUYER    = 2005;
+
+    CLIENT_TYPE_ANDROID_WEIDIAN         = 3001;
+    CLIENT_TYPE_ANDROID_KOUDAI          = 3002;
+    CLIENT_TYPE_ANDROID_BANJIA          = 3003;
+    CLIENT_TYPE_ANDROID_DAIGOU          = 3004;
+    CLIENT_TYPE_ANDROID_WEIDIAN_BUYER   = 3005;
+
+    CLIENT_TYPE_IPAD_WEIDIAN            = 4001;
+    CLIENT_TYPE_IPAD_KOUDAI             = 4002;
+    CLIENT_TYPE_IPAD_BANJIA             = 4003;
+    CLIENT_TYPE_IPAD_DAIGOU             = 4004;
+    CLIENT_TYPE_IPAD_WEIDIAN_BUYER      = 4005;
+}
+
+//协议包类型
+enum EConstPackTypes
+{
+    PACK_TYPE_REQ = 1;//请求包
+    PACK_TYPE_RESP  = 2;//响应包
+    PACK_TYPE_NOTIFY = 3;//通知包
+}
+
+//客户端请求包通用头部
+message CProtocolClientReq
+{
+    optional string cmd = 1; //协议族名，如user,msg
+    optional string sub_cmd = 2; //具体协议名,如login,send,
+    optional string version = 3; //协议版本号，为协议兼容预留
+    optional uint64 uid = 4; //用户id
+    optional uint32 seq = 5; //包序号，用于队列超时管理等 	
+    optional EConstSourceTypes source_type = 6; //客户端类型
+    optional bytes protocol_content = 7; //具体的协议数据
+    optional bytes vcode_session = 8;
+    optional bytes vcode_usdata = 9;
+}
+
+//服务器响应包通用头部
+message CProtocolServerResp
+{
+    optional string cmd = 1; //协议族名，如user,msg
+    optional string sub_cmd = 2; //具体协议名,如login,send,
+    optional string version = 3; //协议版本号，为协议兼容预留
+    optional uint64 uid = 4; //用户id
+    optional uint32 seq = 5; //包序号，用于队列超时管理等 
+    optional EConstPackTypes type = 6; //协议包类型
+    optional uint32 code = 7; //返回码
+    optional bytes protocol_content = 8; //具体的协议数据
+    optional bytes vcode_session = 9;
+    optional string vcode_picdata = 10;
+}
+
+//服务端返回码
+enum EConstPBRespCodes
+{
+    PB_RESP_SUCCESS = 200000; //正常
+    
+    //客户端错误均以400000为基数递增
+    PB_RESP_CLIENT_ERROR = 400000; //客户端错误
+    PB_RESP_CLIENT_LACK_PARAM = 400001; //客户端请求缺少参数
+    
+    //服务器错误均以500000为基数递增
+    PB_RESP_SERVER_ERROR = 500000; //服务器内部错误
+}
+

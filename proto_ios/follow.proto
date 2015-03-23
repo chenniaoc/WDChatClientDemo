@@ -1,0 +1,181 @@
+option optimize_for = LITE_RUNTIME;
+//cmd:follow
+
+//////////
+//follow:get_list
+//////////
+//拉取自己关注的人列表的请求
+message CFollowGetListReq
+{
+	optional uint32 limit = 1;//获取列表每页的长度
+	optional uint32 page = 2;// 获取第几页utl
+}
+
+//关注的人的信息
+message CFollowInfo
+{
+	optional uint64 uid = 1; //关注的用户id
+	optional uint32 tid = 2; //为关注的用户分组的组id
+	optional string memo = 3; //为关注的用户设置的标签/备注, 长度不要超过32字节
+	optional bytes  last_msg_data = 4;
+	optional uint32 unread = 5;
+	optional string headimg  = 6;
+}
+
+//拉取自己关注的人列表的响应
+message CFollowGetListResp
+{
+	repeated CFollowInfo follow_infos = 1;
+}
+
+//////////
+//follow:set_info
+//////////
+//设置自己关注的用户在自己这边的信息请求,比如设置备注，设置分组
+message CFollowSetInfoReq
+{
+	optional CFollowInfo follow_info = 1;
+}
+
+message CFollowSetInfoResp
+{
+	optional CFollowInfo follow_info = 1;
+}
+//////////
+//follow:get_info
+//////////
+//设置自己关注的用户在自己这边的信息请求,比如设置备注，设置分组
+message CFollowGetInfoReq
+{
+	optional uint64 uid = 1;
+}
+
+message CFollowGetInfoResp
+{
+	optional CFollowInfo follow_info = 1;
+}
+
+//////////
+//follow:add
+//////////
+//添加关注请求
+message CFollowAddReq
+{
+	optional uint64 add_uid = 1; //要关注的用户的id
+}
+
+message CFollowAddResp
+{
+}
+
+//////////
+//follow:delete 
+//////////
+//取消关注请求
+message CFollowDeleteReq
+{
+	optional uint64 del_uid = 1; //要取消关注的用户的id
+}
+
+message CFollowDeleteResp
+{
+}
+
+//////////
+//follow:add_block
+//////////
+//拉黑请求,也就是不接收此人消息了
+message CFollowAddBlockReq
+{
+	optional uint64 block_uid = 1; //要拉黑的用户的id
+}
+
+message CFollowAddBlockResp
+{
+}
+
+//////////
+//follow:delete_block
+//////////
+//取消拉黑
+message CFollowDeleteBlockReq
+{
+	optional uint64 block_uid = 1;   //要取消拉黑的用户的id
+}
+
+message CFollowDeleteBlockResp
+{
+}
+
+
+//////////
+//follow:get_block_list
+/////////
+//读取黑名单
+message CFollowGetBlockListReq
+{
+}
+message CFollowGetBlockListResp
+{
+	repeated CBlockInfo block_infos = 1;
+}
+message CBlockInfo
+{
+	optional uint64 block_uid = 1;  
+	optional string block_name = 2;     
+}
+
+//////////
+//follow:get_fans_list
+//////////
+//拉取关注自己的人列表的请求，注意和上面的协议区别，上面是自己关注别人的操作，这里是看谁关注自己
+message CFollowGetFansListReq
+{
+	optional uint32 limit = 1;
+	optional uint32 page = 2;
+}
+
+//关注自己的人的信息
+message CFansInfo
+{
+	optional uint64 uid = 1; //关注的用户id
+	optional uint64 last_msgid = 2; //最后联系时间，用于最近会话界面排序
+}
+
+//拉取关注自己的人列表的响应
+message CFollowGetFansListResp
+{
+	repeated CFansInfo fans_infos = 1;
+}
+
+
+//拉去最近联系人列表
+//follow:get_contact_list
+message CFollowGetContactListReq
+{
+	optional uint32 limit = 1;
+	optional uint32 page = 2;
+}
+message CContactInfo
+{
+	optional uint64 uid      = 1;
+	optional string sid		 = 2;
+	optional string name     = 3;
+	optional bytes  last_msg_data = 4;
+	optional uint32 unread   = 5;
+	optional string headimg  = 6;
+}
+message CFollowGetContactListResp
+{
+	repeated CContactInfo contacts = 1;
+}
+message CFollowDeleteContactReq
+{
+	optional uint64 uid = 1;
+}
+message CFollowDeleteContactResp
+{
+	
+}
+
+
