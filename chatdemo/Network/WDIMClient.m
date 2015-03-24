@@ -9,6 +9,7 @@
 #import "WDIMClient.h"
 #import "GCDAsyncSocket.h"
 #import "WDHandshakeAPI.h"
+#import "WDUserLoginApi.h"
 
 @interface WDIMClient() <GCDAsyncSocketDelegate>
 
@@ -60,6 +61,19 @@
     NSData *handshakeData = [handshakeApi headerData];
     
     [_asyncSocket writeData:handshakeData withTimeout:-1 tag:0];
+    
+    [_asyncSocket readDataWithTimeout:-1 tag:0];
+}
+
+- (void)login;
+{
+    WDUserLoginApi *login = [[WDUserLoginApi alloc] init];
+    
+    NSData *data = [login request];
+    
+    [_asyncSocket writeData:data withTimeout:-1 tag:2];
+    
+
 }
 
 #pragma mark GCDAsyncSocket
@@ -75,6 +89,19 @@
 {
     NSLog(@"disconnected with error:%@", [err description]);
 }
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+    NSLog(@"didReadData%@", data);
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+     NSLog(@"didWriteDataWithTag");
+    [sock readDataWithTimeout:-1 tag:3];
+}
+
+
 
 
 @end

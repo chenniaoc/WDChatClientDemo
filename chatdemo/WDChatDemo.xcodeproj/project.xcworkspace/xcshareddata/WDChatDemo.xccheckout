@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3DE05006-A0B7-4F48-96F9-E90DD3A3B1D5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WDChatDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>05A5187DEEE134AF914F143BE925929639657352</key>
+		<string>https://github.com/chenniaoc/WDChatClientDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>chatdemo/WDChatDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>05A5187DEEE134AF914F143BE925929639657352</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chenniaoc/WDChatClientDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>05A5187DEEE134AF914F143BE925929639657352</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>05A5187DEEE134AF914F143BE925929639657352</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WDChatClientDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

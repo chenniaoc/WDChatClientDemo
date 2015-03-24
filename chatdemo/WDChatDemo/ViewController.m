@@ -32,4 +32,9 @@
     [[WDIMClient instance] handshake];
 }
 
+-(IBAction)login:(id)sender
+{
+    [[WDIMClient instance] login];
+}
+
 @end

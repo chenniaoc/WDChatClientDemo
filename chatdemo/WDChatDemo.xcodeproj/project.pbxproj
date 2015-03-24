@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		893899D51AC029030003B0B2 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
+		893899D81AC16FD90003B0B2 /* WDUserLoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 893899D71AC16FD90003B0B2 /* WDUserLoginApi.m */; };
 		898D41ED1AB7C480004A4303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EC1AB7C480004A4303 /* main.m */; };
 		898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EF1AB7C480004A4303 /* AppDelegate.m */; };
 		898D41F31AB7C480004A4303 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41F21AB7C480004A4303 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
+		893899D61AC16FD90003B0B2 /* WDUserLoginApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUserLoginApi.h; sourceTree = "<group>"; };
+		893899D71AC16FD90003B0B2 /* WDUserLoginApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUserLoginApi.m; sourceTree = "<group>"; };
 		898D41E71AB7C480004A4303 /* WDChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898D41EB1AB7C480004A4303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		898D41EC1AB7C480004A4303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				898D421A1AB7CC1F004A4303 /* WDHandshakeAPI.m */,
 				898D421C1AB7CC6D004A4303 /* WDOutputStreamData.h */,
 				898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */,
+				893899D61AC16FD90003B0B2 /* WDUserLoginApi.h */,
+				893899D71AC16FD90003B0B2 /* WDUserLoginApi.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -293,6 +298,7 @@
 				89FF430E1AC0251D001DB012 /* User.pb.m in Sources */,
 				89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */,
 				89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */,
+				893899D81AC16FD90003B0B2 /* WDUserLoginApi.m in Sources */,
 				898D41F31AB7C480004A4303 /* ViewController.m in Sources */,
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,

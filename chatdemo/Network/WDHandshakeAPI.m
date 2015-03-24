@@ -9,6 +9,8 @@
 #import "WDHandshakeAPI.h"
 #import "cs_header.h"
 #import "WDOutputStreamData.h"
+#import "User.pb.h"
+#import <ProtocolBuffers/ProtocolBuffers.h>
 
 @implementation WDHandshakeAPI
 
@@ -33,13 +35,8 @@
     [data writeInt:0];
     // reserved2
     [data writeInt:0];
-    
-    
-//    [data writeInt:0];
-//    [data writeInt:0];
 
-    NSData *headerData = [NSData dataWithBytes:data.data.bytes length:data.length];
-    return headerData;
+    return data.data;
 }
 
 @end

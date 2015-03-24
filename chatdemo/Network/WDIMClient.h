@@ -20,4 +20,6 @@
 
 - (void)handshake;
 
+- (void)login;
+
 @end
