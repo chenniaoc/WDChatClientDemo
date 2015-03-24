@@ -22,4 +22,6 @@
 
 - (void)login;
 
+- (void)readData;
+
 @end

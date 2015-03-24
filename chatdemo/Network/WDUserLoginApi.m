@@ -17,7 +17,7 @@
 - (NSData *)headerDataWithBodyData:(NSData *)body
 {
     
-    NSUInteger bodyLength = body.length;
+    UInt32 bodyLength = (UInt32)body.length;
     WDOutputStreamData *data = [[WDOutputStreamData alloc] init];
     // version
     [data writeInt:CS_HEADER_VERSION];
@@ -43,38 +43,35 @@
     return data.data;
 }
 
-- (WDOutputStreamData *)bodyData
+- (NSData *)bodyData
 {
-    WDOutputStreamData *data = nil;
-    
+    static int seqId = 0;
     NSOutputStream *rawos = [[NSOutputStream alloc] initToMemory];
     
     [rawos open];
     // PB req client header
-    CProtocolClientReqBuilder *reqBuilder = [[CProtocolClientReq builder] setCmd:@"msg"];
+    CProtocolClientReqBuilder *reqBuilder = [[CProtocolClientReq builder] setCmd:@"user"];
     [reqBuilder setSubCmd:@"login"];
-    [reqBuilder setSeq:1];
-    [reqBuilder setSourceType:EConstSourceTypesClientTypeIphoneWeidian];
-    CProtocolClientReq *cr = [reqBuilder build];
-    SInt32 headerSize =  cr.serializedSize;
+    [reqBuilder setSeq:++seqId];
+    [reqBuilder setVersion:@"1.0.0"];
+    [reqBuilder setSourceType:EConstSourceTypesClientTypeAndroidDaigou];
     
-    [cr writeToOutputStream:rawos];
-    
+    NSOutputStream *rawBodyOS = [[NSOutputStream alloc] initToMemory];
+    [rawBodyOS open];
     // PB user login
     CUserLoginReqBuilder *lb = [CUserLoginReq builder];
-    [lb setSid:@"13042"];
-    [lb setUss:@"Wm85FefWB0mcZwbSvfZ8B0zgDSQjVl2kU2Fm3UWIJNpI3D"];
+    [lb setSid:@"368095437"];
+    [lb setUss:@"ad7947f8c1839c42f00de546370263d4"];
+    [lb setClientVersion:@"1.0.0"];
     CUserLoginReq *lbr = [lb build];
-    SInt32 bodySize = lbr.serializedSize;
-    [rawos open];
-//    PBCodedOutputStream *bos = [PBCodedOutputStream streamWithData:bodyData];
-//    [lbr writeToCodedOutputStream:bos];
-    [lbr writeToOutputStream:rawos];
-//    [bos flush];
+    [lbr writeToOutputStream:rawBodyOS];
     
+    NSData *pbBodyData = [rawBodyOS propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
+    [reqBuilder setProtocolContent:pbBodyData];
+    CProtocolClientReq *cr = [reqBuilder build];
+    [cr writeToOutputStream:rawos];
     
     NSData *data2 = [rawos propertyForKey:NSStreamDataWrittenToMemoryStreamKey];
-    
     
     return data2;
 }

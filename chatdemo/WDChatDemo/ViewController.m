@@ -37,4 +37,9 @@
     [[WDIMClient instance] login];
 }
 
+-(IBAction)readData:(id)sender
+{
+    [[WDIMClient instance] readData];
+}
+
 @end

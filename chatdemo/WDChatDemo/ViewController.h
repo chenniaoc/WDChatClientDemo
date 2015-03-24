@@ -14,6 +14,7 @@
 
 -(IBAction)login:(id)sender;
 
+-(IBAction)readData:(id)sender;
 
 @end
 
