@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Network/WDUserLoginApi.m"
-            timestampString = "448903003.524554"
+            filePath = "Network/WDIMClient.m"
+            timestampString = "448972152.344742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-request"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-startService"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Network/WDIMClient.m"
-            timestampString = "448928294.928842"
+            filePath = "Network/GLIM_CS_Header.m"
+            timestampString = "448973624.283909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-socket:didReadData:withTag:"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "+headerFromData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

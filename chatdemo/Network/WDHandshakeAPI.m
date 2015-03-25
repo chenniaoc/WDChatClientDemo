@@ -19,8 +19,12 @@
     WDOutputStreamData *data = [[WDOutputStreamData alloc] init];
     // version
     [data writeInt:CS_HEADER_VERSION];
+    
+    int magicNum = htonl(CS_HEADER_MAGIC);
     // magic_num
     [data writeInt:CS_HEADER_MAGIC];
+    
+//    [data writeIntAsLittleEndian:CS_HEADER_MAGIC];
     // cmd
     [data writeShort:HEADER_CMD_HANDSHAKE];
     // proto_flag
@@ -36,6 +40,17 @@
     // reserved2
     [data writeInt:0];
 
+//    // reserved2
+    [data writeInt:0];
+//
+//    // reserved2
+    [data writeInt:0];
+    
+//    // reserved2
+//    [data writeInt:0];
+//    
+//    // reserved2
+//    [data writeInt:0];
     return data.data;
 }
 

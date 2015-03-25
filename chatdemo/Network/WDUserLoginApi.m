@@ -23,10 +23,12 @@
     [data writeInt:CS_HEADER_VERSION];
     // magic_num
     [data writeInt:CS_HEADER_MAGIC];
+
+//    [data writeIntAsLittleEndian:CS_HEADER_MAGIC];
     // cmd
     [data writeShort:HEADER_CMD_LOGIN];
     // proto_flag
-    [data writeChar:CONNECT_STATUS_STEP_1]; // connect_status
+    [data writeChar:CONNECT_STATUS_OK]; // connect_status
     [data writeChar:SYM_METHOD_NONE];       // E_SYM_METHOD
     
     // 原始长度
@@ -37,7 +39,7 @@
     [data writeInt:0];
     // reserved2
     [data writeInt:0];
-    
+
     [data.data appendData:body];
 
     return data.data;

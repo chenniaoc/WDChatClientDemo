@@ -21,6 +21,7 @@
 		898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
 		898D421B1AB7CC1F004A4303 /* WDHandshakeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421A1AB7CC1F004A4303 /* WDHandshakeAPI.m */; };
 		898D421E1AB7CC6D004A4303 /* WDOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */; };
+		89AC53831AC242E400D8C7C8 /* GLIM_CS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLIM_CS_Header.m */; };
 		89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
 		89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
 		89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43081AC0251D001DB012 /* Msg.pb.m */; };
@@ -67,6 +68,8 @@
 		898D421A1AB7CC1F004A4303 /* WDHandshakeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDHandshakeAPI.m; sourceTree = "<group>"; };
 		898D421C1AB7CC6D004A4303 /* WDOutputStreamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDOutputStreamData.h; sourceTree = "<group>"; };
 		898D421D1AB7CC6D004A4303 /* WDOutputStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDOutputStreamData.m; sourceTree = "<group>"; };
+		89AC53811AC242E400D8C7C8 /* GLIM_CS_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLIM_CS_Header.h; sourceTree = "<group>"; };
+		89AC53821AC242E400D8C7C8 /* GLIM_CS_Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLIM_CS_Header.m; sourceTree = "<group>"; };
 		89FF43031AC0251D001DB012 /* Follow.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.pb.h; sourceTree = "<group>"; };
 		89FF43041AC0251D001DB012 /* Follow.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follow.pb.m; sourceTree = "<group>"; };
 		89FF43051AC0251D001DB012 /* Im_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Im_base.pb.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 		898D42141AB7C4F4004A4303 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				89AC53811AC242E400D8C7C8 /* GLIM_CS_Header.h */,
+				89AC53821AC242E400D8C7C8 /* GLIM_CS_Header.m */,
 				8975D5711AC21CC3009E02D5 /* GLIMNetworkServiceProtocol.h */,
 				8975D5721AC21E62009E02D5 /* GLIMBaseNetworkService.h */,
 				8975D5731AC21E62009E02D5 /* GLIMBaseNetworkService.m */,
@@ -312,6 +317,7 @@
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				8975D5741AC21E62009E02D5 /* GLIMBaseNetworkService.m in Sources */,
 				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,
+				89AC53831AC242E400D8C7C8 /* GLIM_CS_Header.m in Sources */,
 				898D421B1AB7CC1F004A4303 /* WDHandshakeAPI.m in Sources */,
 				898D421E1AB7CC6D004A4303 /* WDOutputStreamData.m in Sources */,
 				898D41ED1AB7C480004A4303 /* main.m in Sources */,

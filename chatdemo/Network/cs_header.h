@@ -4,26 +4,27 @@
 
 #include<stdint.h>
 
+//#define CS_HEADER_MAGIC (0x20150130)
 #define CS_HEADER_MAGIC (0x20150130)
 #define CS_HEADER_VERSION (0x01)
 
 //是否加密
-enum E_SYM_METHOD
+typedef enum E_SYM_METHOD
 {
     SYM_METHOD_NONE = 1, //不加密
     SYM_METHOD_ENC = 2 //加密
-};
+} E_SYM_METHOD;
 
 
 //连接状态
-enum E_CONNECT_STATUS
+typedef enum E_CONNECT_STATUS
 {
     CONNECT_STATUS_STEP_1 = 1,
     CONNECT_STATUS_OK = 2
-};
+} E_CONNECT_STATUS;
 
 //CMD
-enum E_HEADER_CMD
+typedef enum E_HEADER_CMD
 {
     HEADER_CMD_HANDSHAKE = 1,
     HEADER_CMD_COMMON = 2,
@@ -33,13 +34,13 @@ enum E_HEADER_CMD
     HEADER_CMD_KICKOUT = 6,
     HEADER_CMD_QUICK_CONNECT = 7,
     HEADER_CMD_SET_BACKGROUND = 8,
-};
+} E_HEADER_CMD;
 
-struct PROTO_FLAG
+typedef struct PROTO_FLAG
 {
     uint8_t connect_status; //E_CONNECT_STATUS
     uint8_t sym_method; //E_SYM_METHOD
-}__attribute__((packed));
+}__attribute__((packed)) PROTO_FLAG;
 
 //定长包头
 //变长包体

@@ -9,3 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
+@interface CS_HEADER : NSObject
+
+@end

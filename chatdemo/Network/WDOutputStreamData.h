@@ -16,6 +16,8 @@
 
 - (void)writeInt:(int)data;
 
+- (void)writeIntAsLittleEndian:(int)data;
+
 - (void)writeShort:(short)data;
 
 - (void)writeChar:(char)data;

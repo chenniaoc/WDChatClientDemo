@@ -10,6 +10,7 @@
 #import "GCDAsyncSocket.h"
 #import "WDHandshakeAPI.h"
 #import "WDUserLoginApi.h"
+#import "GLIM_CS_Header.h"
 
 @interface WDIMClient() <GCDAsyncSocketDelegate>
 
@@ -30,6 +31,24 @@
             if (!c) {
                 c = [WDIMClient new];
                 
+                // 这是个struct
+                TCP_HEADER header;
+                char *bytes = (char *)&header;
+                char *tempOrin = bytes;
+                
+                char *byteCopy = malloc(sizeof(header));
+                char *tempCopy = byteCopy;
+                
+                int length = sizeof(header);
+                while (length > 0) {
+                    *tempCopy = *tempOrin;
+                    tempCopy++;
+                    tempOrin++;
+                    
+                    length--;
+                }
+                
+                TCP_HEADER *copyHeader = (TCP_HEADER *)byteCopy;
                 
                 c.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:c delegateQueue:dispatch_get_global_queue(0, 0)];
             }
@@ -63,7 +82,7 @@
     if(![_asyncSocket isConnected]) return;
     WDHandshakeAPI *handshakeApi = [[WDHandshakeAPI alloc] init];
     NSData *handshakeData = [handshakeApi headerData];
-    
+    NSLog(@"handshake req data:%@", handshakeData);
     [_asyncSocket writeData:handshakeData withTimeout:-1 tag:0];
     
 //    [_asyncSocket readDataWithTimeout:-1 tag:0];
@@ -74,7 +93,7 @@
     WDUserLoginApi *login = [[WDUserLoginApi alloc] init];
     
     NSData *data = [login request];
-    
+    NSLog(@"login req data:%@", data);
     [_asyncSocket writeData:data withTimeout:-1 tag:1];
     
 //    [_asyncSocket readDataWithTimeout:-1 tag:1];
@@ -103,12 +122,6 @@
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
 {
     NSLog(@"connected to server %@", host);
-    
-    [_asyncSocket writeData:[NSData data] withTimeout:-1 tag:100];
-//    [self handshake];
-    [self readData];
-    
-    
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
@@ -119,12 +132,9 @@
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
     NSLog(@"didReadData%@", data);
-    if (data.length == 36) {
-        
-    }
     
 //    [sock readDataWithTimeout:-1 tag:0];
-    
+    [GLIM_CS_Header headerFromData:data];
     
 }
 
