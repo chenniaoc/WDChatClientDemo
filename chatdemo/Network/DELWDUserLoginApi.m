@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "WDUserLoginApi.h"
+#import "DELWDUserLoginApi.h"
 #import "Im_base.pb.h"
 #import "User.pb.h"
 #import "WDOutputStreamData.h"
 #import "cs_header.h"
 
-@implementation WDUserLoginApi
+@implementation DELWDUserLoginApi : NSObject 
 
 - (NSData *)headerDataWithBodyData:(NSData *)body
 {

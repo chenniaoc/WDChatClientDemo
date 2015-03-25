@@ -7,19 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ProtocolBuffers/ProtocolBuffers.h>
+#import "Im_base.pb.h"
 #import "GLIMNetworkServiceProtocol.h"
 #import "cs_header.h"
+#import "GLIM_CS_Header.h"
 
-typedef void(^completionBlock)(id responeObject, NSError *error);
+#define GLIM_CLIENT_VERSION     @"1.0.0"
+#define GLIM_VERSION            @"1.0.0"
+
+typedef void(^IMCompletionBlock)(id responeObject, NSError *error);
 
 @interface GLIMBaseNetworkService : NSObject <GLIMNetworkServiceProtocol>
 
+@property (nonatomic, copy) IMCompletionBlock completionBlock;
 
-- (NSMutableData *)csHeaderData;
+@property (nonatomic, strong) NSString *clientVersion;
 
-- (void)requestWithObject:(id<GLIMNetworkServiceProtocol>)object
-          completionBlock:(completionBlock)block;
+@property (nonatomic, strong) NSString *version;
 
+
+- (void)requestWithCompletionBlock:(IMCompletionBlock)block;
+
+
+- (GLIM_CS_Header *)csHeader;
+
+- (UInt32)generateReqId;
+
+- (CProtocolClientReqBuilder *)generatePBHeader;
+
+//- (PBGeneratedMessageBuilder *)generatePBBody;
 
 
 @end

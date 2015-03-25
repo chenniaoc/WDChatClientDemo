@@ -22,5 +22,7 @@
 
 - (void)writeChar:(char)data;
 
+- (NSMutableData *)mutableData;
+
 
 @end

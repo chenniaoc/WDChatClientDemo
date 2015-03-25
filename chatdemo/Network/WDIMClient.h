@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GCDAsyncSocket.h"
 #import "cs_header.h"
 
 #define IM_SERVER_ADDR @"10.1.21.139"
 #define IM_SERVER_PORT 2015
 
 @interface WDIMClient : NSObject
+
+@property (nonatomic, strong) GCDAsyncSocket *asyncSocket;
 
 + (instancetype)instance;
 

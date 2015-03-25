@@ -7,14 +7,15 @@
 //
 
 #import "WDIMClient.h"
-#import "GCDAsyncSocket.h"
-#import "WDHandshakeAPI.h"
-#import "WDUserLoginApi.h"
+//#import "WDHandshakeAPI.h"
+//#import "WDUserLoginApi.h"
 #import "GLIM_CS_Header.h"
+#import "GLIMHandShakeReq.h"
+#import "GLIMLoginReq.h"
 
 @interface WDIMClient() <GCDAsyncSocketDelegate>
 
-@property (nonatomic, strong) GCDAsyncSocket *asyncSocket;
+
 
 @end
 
@@ -80,21 +81,37 @@
 - (void)handshake
 {
     if(![_asyncSocket isConnected]) return;
-    WDHandshakeAPI *handshakeApi = [[WDHandshakeAPI alloc] init];
-    NSData *handshakeData = [handshakeApi headerData];
-    NSLog(@"handshake req data:%@", handshakeData);
-    [_asyncSocket writeData:handshakeData withTimeout:-1 tag:0];
+    
+    GLIMHandShakeReq *req = [[GLIMHandShakeReq alloc] init];
+    
+    [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        
+    }];
+    
+//    return;
+//    WDHandshakeAPI *handshakeApi = [[WDHandshakeAPI alloc] init];
+//    NSData *handshakeData = [handshakeApi headerData];
+//    NSLog(@"handshake req data:%@", handshakeData);
+//    [_asyncSocket writeData:handshakeData withTimeout:-1 tag:0];
     
 //    [_asyncSocket readDataWithTimeout:-1 tag:0];
 }
 
 - (void)login;
 {
-    WDUserLoginApi *login = [[WDUserLoginApi alloc] init];
     
-    NSData *data = [login request];
-    NSLog(@"login req data:%@", data);
-    [_asyncSocket writeData:data withTimeout:-1 tag:1];
+    GLIMLoginReq *req = [[GLIMLoginReq alloc] init];
+    
+    [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        
+    }];
+    
+//    return;
+//    WDUserLoginApi *login = [[WDUserLoginApi alloc] init];
+//    
+//    NSData *data = [login request];
+//    NSLog(@"login req data:%@", data);
+//    [_asyncSocket writeData:data withTimeout:-1 tag:1];
     
 //    [_asyncSocket readDataWithTimeout:-1 tag:1];
     

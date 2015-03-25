@@ -93,4 +93,9 @@ unsigned char* int2bytes(int a,unsigned char* aResult)
     _length++;
 }
 
+- (NSMutableData *)mutableData
+{
+    return _data;
+}
+
 @end

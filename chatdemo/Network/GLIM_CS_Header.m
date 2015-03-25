@@ -7,8 +7,37 @@
 //
 
 #import "GLIM_CS_Header.h"
+#import "WDInputStreamData.h"
+#import "WDOutputStreamData.h"
 
 @implementation GLIM_CS_Header
+
+- (instancetype)initWithCMD:(E_HEADER_CMD)cmd
+{
+    switch (cmd) {
+        case HEADER_CMD_HANDSHAKE:
+            self = [self init];
+            self.cmd = HEADER_CMD_HANDSHAKE;
+            self.enc_len = 8;
+            self.org_len = 8;
+            break;
+            
+        case HEADER_CMD_LOGIN:
+            self = [self init];
+            self.cmd = HEADER_CMD_LOGIN;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (cmd != HEADER_CMD_HANDSHAKE) {
+        // 只有握手协议使用step-1
+        self.connect_status = CONNECT_STATUS_OK;
+    }
+    
+    return self;
+}
 
 - (instancetype)init
 {
@@ -30,18 +59,79 @@
 
 + (instancetype)headerFromData:(NSData *)data
 {
+    if (data.length < 28) {
+        NSLog(@"data is not enough to init a header");
+        return nil;
+    }
     GLIM_CS_Header *_newSelf = [GLIM_CS_Header new];
     
-    const int *dataBytes = data.bytes;
-    NSUInteger dataLength = data.length;
-
-    _newSelf.version = htonl(*dataBytes);
-
-    dataBytes++;
-    _newSelf.magic_num = htonl(*dataBytes);
+    WDInputStreamData *isd = [WDInputStreamData streamWithData:data];
+    
+    _newSelf.version = [isd readInt];
+    _newSelf.magic_num = [isd readInt];
+    
+    if (![_newSelf validateMagicNumber]) {
+        NSLog(@"invalid magic number");
+        
+        return nil;
+    }
+    
+    _newSelf.cmd = [isd readShort];
+    _newSelf.connect_status = [isd readChar];
+    _newSelf.sym_method = [isd readChar];
+    _newSelf.org_len = [isd readInt];
+    _newSelf.enc_len = [isd readInt];
+    _newSelf.reserved1 = [isd readInt];
+    _newSelf.reserved2 = [isd readInt];
     
     return _newSelf;
 
+}
+
+- (NSData *)encodeData
+{
+    WDOutputStreamData *data = [[WDOutputStreamData alloc] init];
+    // version
+    [data writeInt:self.version];
+    
+    // magic_num
+    [data writeInt:self.magic_num];
+    
+    //    [data writeIntAsLittleEndian:CS_HEADER_MAGIC];
+    // cmd
+    [data writeShort:self.cmd];
+    // proto_flag
+    [data writeChar:self.connect_status]; // connect_status
+    [data writeChar:self.sym_method];       // E_SYM_METHOD
+    
+    // 原始长度
+    [data writeInt:self.org_len];
+    // 加密后长度
+    [data writeInt:self.enc_len];
+    // reserved1
+    [data writeInt:0];
+    // reserved2
+    [data writeInt:0];
+    if (self.cmd == HEADER_CMD_HANDSHAKE) {
+        // reserved2
+        [data writeInt:0];
+        // reserved2
+        [data writeInt:0];
+    }
+    
+    
+    return [data mutableData];
+}
+
+- (BOOL)validateVersion
+{
+    return self.version == CS_HEADER_VERSION;
+}
+
+
+- (BOOL)validateMagicNumber
+{
+    return self.magic_num == CS_HEADER_MAGIC;
 }
 
 @end

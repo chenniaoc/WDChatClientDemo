@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 zhangyuchen. All rights reserved.
 //
 
-#import "WDHandshakeAPI.h"
+#import "DELWDHandshakeAPI.h"
 #import "cs_header.h"
 #import "WDOutputStreamData.h"
 #import "User.pb.h"
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
-@implementation WDHandshakeAPI
+@implementation DELWDHandshakeAPI : NSObject
 
 - (NSData *)headerData
 {
@@ -42,15 +42,8 @@
 
 //    // reserved2
     [data writeInt:0];
-//
 //    // reserved2
     [data writeInt:0];
-    
-//    // reserved2
-//    [data writeInt:0];
-//    
-//    // reserved2
-//    [data writeInt:0];
     return data.data;
 }
 

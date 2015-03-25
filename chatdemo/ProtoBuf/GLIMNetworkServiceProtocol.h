@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GLIM_CS_Header.h"
+#import <ProtocolBuffers/ProtocolBuffers.h>
 
 @protocol GLIMNetworkServiceProtocol <NSObject>
 
-// req must to implement
 @optional
 
 /*************************************************
@@ -26,12 +27,16 @@
 
 - (id)responsePBSubCMD;
 
+- (PBGeneratedMessageBuilder *)generatePBBody;
+
 @required
-- (id)csHeaderCMD;
+- (GLIM_CS_Header *)csHeader;
 
-- (id)csHeaderSubCMD;
+//- (CProtocolClientReqBuilder *)generatePBHeader;
 
-- (NSData *)packReqData;
+//- (PBGeneratedMessageBuilder *)generatePBBody;
+
+//- (NSData *)packReqData;
 
 - (id)unpackResData;
 

@@ -24,6 +24,7 @@
 
 
 
+
 @interface GLIM_CS_Header : NSObject
 
 // 协议版本 CS_HEADER_VERSION
@@ -54,8 +55,14 @@
 // 请求数据区域
 @property (nonatomic, assign) UInt8 *bodyDataBytes;
 
+- (instancetype)initWithCMD:(E_HEADER_CMD)cmd;
+
 
 + (instancetype)headerFromData:(NSData *)data;
+
+- (BOOL)validateVersion;
+
+- (BOOL)validateMagicNumber;
 
 - (UInt8 *)encodeBytes;
 

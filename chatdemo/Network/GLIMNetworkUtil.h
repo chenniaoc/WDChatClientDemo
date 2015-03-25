@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import <ProtocolBuffers/ProtocolBuffers.h>
 
-@interface CS_HEADER : NSObject
+
+@interface GLIMNetworkUtil : NSObject
+
++ (NSData *)convertPB2Data:(id<PBMessage>)pbObject;
 
 @end
