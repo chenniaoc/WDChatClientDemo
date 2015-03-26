@@ -6,42 +6,63 @@
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "GLIMBaseNetworkService.h"
+#import "GLMBaseNetworkService.h"
 #import "WDIMClient.h"
-#import "GLIMNetworkUtil.h"
+#import "GLMNetworkUtil.h"
 
-@implementation GLIMBaseNetworkService
+@implementation GLMBaseNetworkService
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.clientVersion = GLIM_CLIENT_VERSION;
-        self.version = GLIM_VERSION;
+        self.clientVersion = GLM_CLIENT_VERSION;
+        self.version = GLM_VERSION;
     }
     
     return self;
 }
 
-- (GLIM_CS_Header *)csHeader
+- (GLMCS_Header *)csHeader
 {
     return nil;
 }
 
-- (void)requestWithCompletionBlock:(IMCompletionBlock)block
+- (void)requestWithCompletionBlock:(GLMCompletionBlock)block
 {
     
     NSData *headerData = [self packReqData];
     GCDAsyncSocket *socket = [WDIMClient instance].asyncSocket;
     [socket writeData:headerData withTimeout:-1 tag:0];
     [socket readDataWithTimeout:-1 tag:0];
+
     
 }
 
-- (UInt32)generateReqId
+/*************************************************
+ *
+ * 子类如果不实现此方法，默认返回子类实现的requestPBCMD
+ *
+ *************************************************/
+- (id)responsePBCMD
 {
-    static UInt32 reqId = 0;
-    return reqId++;
+    return [self requestPBCMD];
+}
+
+/*************************************************
+ *
+ * 子类如果不实现此方法，默认返回子类设置的requestPBSubCMD
+ *
+ *************************************************/
+- (id)responsePBSubCMD
+{
+    return [self requestPBSubCMD];
+}
+
+- (UInt32)generateSeqId
+{
+    static UInt32 seqId = 0;
+    return seqId++;
 }
 
 - (CProtocolClientReqBuilder *)generatePBHeader
@@ -72,7 +93,7 @@
     PBGeneratedMessage *pbody = [pbBodyBuilder build];
     NSMutableData *reqData = [NSMutableData data];
     
-    NSData *tmpData = [GLIMNetworkUtil convertPB2Data:pbody];
+    NSData *tmpData = [GLMNetworkUtil convertPB2Data:pbody];
     
     // 从基类或子类（被重写的情况）实现的pbHeaderBuilder方法获取pbBody的Builder对象
     CProtocolClientReqBuilder *pbHeaderBuilder = nil;
@@ -81,19 +102,19 @@
     }
     [pbHeaderBuilder setProtocolContent:tmpData];
     CProtocolClientReq *pHeader = [pbHeaderBuilder build];
-    tmpData = [GLIMNetworkUtil convertPB2Data:pHeader];
+    tmpData = [GLMNetworkUtil convertPB2Data:pHeader];
     
     
     
-    // 从基类或子类（被重写的情况）实现的csHeader方法获取GLIM_CS_Header对象
-    GLIM_CS_Header *csHeader = [self csHeader];
+    // 从基类或子类（被重写的情况）实现的csHeader方法获取GLMCS_Header对象
+    GLMCS_Header *csHeader = [self csHeader];
     if (tmpData) {
         // 如果子类实现了生成pb数据，那么在header内指定对应的长度
         csHeader.org_len = (UInt32)tmpData.length;
         csHeader.enc_len = (UInt32)tmpData.length;
     }
     
-    // 把GLIM_CS_Header instance 转换成NSData
+    // 把GLMCS_Header instance 转换成NSData
     NSData *headerData = [csHeader encodeData];
     
     // 拼装请求数据

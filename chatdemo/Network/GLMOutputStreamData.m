@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 zhangyuchen. All rights reserved.
 //
 
-#import "WDOutputStreamData.h"
+#import "GLMOutputStreamData.h"
 
-@implementation WDOutputStreamData
+@implementation GLMOutputStreamData 
 
 - (instancetype)init
 {

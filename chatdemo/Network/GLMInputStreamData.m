@@ -1,14 +1,14 @@
 //
-//  WDInputStreamData.m
+//  GLMInputStreamData.m
 //  WDChatDemo
 //
 //  Created by YuchenZhang on 3/25/15.
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "WDInputStreamData.h"
+#import "GLMInputStreamData.h"
 
-@interface WDInputStreamData ()
+@interface GLMInputStreamData ()
 
 @property (nonatomic, assign) NSUInteger readOffset;
 
@@ -16,12 +16,12 @@
 
 @end
 
-@implementation WDInputStreamData
+@implementation GLMInputStreamData
 
 
 + (instancetype)streamWithData:(NSData *)data
 {
-    WDInputStreamData *sd = [[WDInputStreamData alloc] init];
+    GLMInputStreamData *sd = [[GLMInputStreamData alloc] init];
     sd.data = data;
     return sd;
 }

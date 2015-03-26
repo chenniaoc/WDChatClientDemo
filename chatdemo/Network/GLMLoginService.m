@@ -6,13 +6,14 @@
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "GLIMLoginReq.h"
 #import "Im_base.pb.h"
 #import "User.pb.h"
-#import "GLIM_CS_Header.h"
-#import "GLIMNetworkUtil.h"
 
-@implementation GLIMLoginReq
+#import "GLMLoginService.h"
+#import "GLMCS_Header.h"
+#import "GLMNetworkUtil.h"
+
+@implementation GLMLoginService
 
 - (id)requestPBCMD
 {
@@ -24,9 +25,9 @@
     return @"login";
 }
 
-- (GLIM_CS_Header *)csHeader
+- (GLMCS_Header *)csHeader
 {
-    GLIM_CS_Header *header = [[GLIM_CS_Header alloc] initWithCMD:HEADER_CMD_LOGIN];
+    GLMCS_Header *header = [[GLMCS_Header alloc] initWithCMD:HEADER_CMD_LOGIN];
     return header;
 }
 

@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GLIMNetworkUtil.h"
+#import "GLMNetworkUtil.h"
 
-@implementation GLIMNetworkUtil
+@implementation GLMNetworkUtil
 
 + (NSData *)convertPB2Data:(id<PBMessage>)pbObject
 {

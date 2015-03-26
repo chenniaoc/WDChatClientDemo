@@ -9,9 +9,11 @@
 #import "WDIMClient.h"
 //#import "WDHandshakeAPI.h"
 //#import "WDUserLoginApi.h"
-#import "GLIM_CS_Header.h"
-#import "GLIMHandShakeReq.h"
-#import "GLIMLoginReq.h"
+#import "GLMCS_Header.h"
+#import "GLMHandShakeService.h"
+#import "GLMLoginService.h"
+#import "Im_base.pb.h"
+#import "User.pb.h"
 
 @interface WDIMClient() <GCDAsyncSocketDelegate>
 
@@ -82,7 +84,7 @@
 {
     if(![_asyncSocket isConnected]) return;
     
-    GLIMHandShakeReq *req = [[GLIMHandShakeReq alloc] init];
+    GLMHandShakeService *req = [[GLMHandShakeService alloc] init];
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
         
@@ -100,7 +102,9 @@
 - (void)login;
 {
     
-    GLIMLoginReq *req = [[GLIMLoginReq alloc] init];
+    GLMLoginService *req = [[GLMLoginService alloc] init];
+    req.sid = @"13042";
+    req.uss = @"Wm85FefWB0mcZwbSvfZ8B0zgDSQjVl2kU2Fm3UWIJNpI3D";
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
         
@@ -151,7 +155,40 @@
     NSLog(@"didReadData%@", data);
     
 //    [sock readDataWithTimeout:-1 tag:0];
-    [GLIM_CS_Header headerFromData:data];
+    GLMCS_Header *parsedHeader = [GLMCS_Header headerFromData:data];
+    
+    if (parsedHeader) {
+        // valid header
+        UInt32 originLength = parsedHeader.org_len;
+        UInt8 buffer[originLength];
+        [data getBytes:&buffer range:(NSRange){CS_HEADER_LENGTH, originLength}];
+        for (int i = 0; i< originLength; i++) {
+            printf("%02x", buffer[i]);
+            if ((i + 1) % 4 == 0) {
+                printf(" ");
+            }
+        }
+        if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE) {
+            return;
+        }
+        
+        NSData *pbHeader = [NSData dataWithBytes:&buffer length:originLength];
+        CProtocolServerResp *res = [CProtocolServerResp parseFromData:pbHeader];
+        if ([res.cmd isEqualToString:@"user"]) {
+            if ([res.subCmd isEqualToString:@"login"]) {
+                
+                NSData *pbBodyData = res.protocolContent;
+                CUserLoginResp *loginResp = [CUserLoginResp parseFromData:pbBodyData];
+                
+                
+            }
+        }
+        
+        
+        
+    }
+    
+    [sock readDataWithTimeout:-1 tag:0];
     
 }
 

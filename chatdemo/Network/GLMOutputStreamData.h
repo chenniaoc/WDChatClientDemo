@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WDOutputStreamData : NSObject
+@interface GLMOutputStreamData  : NSObject
 
 @property (nonatomic, strong) NSMutableData *data;
 

@@ -11,7 +11,7 @@
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
 
-@interface GLIMNetworkUtil : NSObject
+@interface GLMNetworkUtil : NSObject
 
 + (NSData *)convertPB2Data:(id<PBMessage>)pbObject;
 

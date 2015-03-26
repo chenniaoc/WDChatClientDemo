@@ -1,5 +1,5 @@
 //
-//  GLIM_CS_Header.h
+//  GLMCS_Header.h
 //  WDChatDemo
 //
 //  Created by zhangyuchen on 15-3-25.
@@ -10,7 +10,7 @@
 #import "cs_header.h"
 
 ////CMD
-//typedef enum GLIM_CS_HEADER_CMD
+//typedef enum GLMCS_Header_CMD
 //{
 //    HEADER_CMD_HANDSHAKE = 1,
 //    HEADER_CMD_COMMON = 2,
@@ -23,9 +23,9 @@
 //};
 
 
+#define CS_HEADER_LENGTH 28
 
-
-@interface GLIM_CS_Header : NSObject
+@interface GLMCS_Header : NSObject
 
 // 协议版本 CS_HEADER_VERSION
 @property (nonatomic, assign) UInt32 version;
@@ -56,7 +56,6 @@
 @property (nonatomic, assign) UInt8 *bodyDataBytes;
 
 - (instancetype)initWithCMD:(E_HEADER_CMD)cmd;
-
 
 + (instancetype)headerFromData:(NSData *)data;
 

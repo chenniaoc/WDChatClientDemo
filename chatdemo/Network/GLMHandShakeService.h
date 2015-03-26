@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "GLIMBaseNetworkService.h"
+#import "GLMBaseNetworkService.h"
 
-@interface GLIMHandShakeReq : GLIMBaseNetworkService <GLIMNetworkServiceProtocol>
+@interface GLMHandShakeService : GLMBaseNetworkService <GLMNetworkServiceProtocol>
 
 @end

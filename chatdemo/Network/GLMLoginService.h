@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 zhangyuchen. All rights reserved.
 //
 
-#import "GLIMBaseNetworkService.h"
+#import "GLMBaseNetworkService.h"
 
-@interface GLIMLoginReq : GLIMBaseNetworkService <GLIMNetworkServiceProtocol>
+@interface GLMLoginService : GLMBaseNetworkService <GLMNetworkServiceProtocol>
 
 @property (nonatomic, strong) NSString *sid;
 

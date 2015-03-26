@@ -1,16 +1,17 @@
 //
-//  GLIM_CS_Header.m
+//  GLMCS_Header.m
 //  WDChatDemo
 //
 //  Created by zhangyuchen on 15-3-25.
 //  Copyright (c) 2015年 zhangyuchen. All rights reserved.
 //
 
-#import "GLIM_CS_Header.h"
-#import "WDInputStreamData.h"
-#import "WDOutputStreamData.h"
+#import "GLMCS_Header.h"
+#import "GLMInputStreamData.h"
+#import "GLMOutputStreamData.h"
 
-@implementation GLIM_CS_Header
+
+@implementation GLMCS_Header
 
 - (instancetype)initWithCMD:(E_HEADER_CMD)cmd
 {
@@ -63,9 +64,9 @@
         NSLog(@"data is not enough to init a header");
         return nil;
     }
-    GLIM_CS_Header *_newSelf = [GLIM_CS_Header new];
+    GLMCS_Header *_newSelf = [GLMCS_Header new];
     
-    WDInputStreamData *isd = [WDInputStreamData streamWithData:data];
+    GLMInputStreamData *isd = [GLMInputStreamData streamWithData:data];
     
     _newSelf.version = [isd readInt];
     _newSelf.magic_num = [isd readInt];
@@ -90,7 +91,7 @@
 
 - (NSData *)encodeData
 {
-    WDOutputStreamData *data = [[WDOutputStreamData alloc] init];
+    GLMOutputStreamData  *data = [[GLMOutputStreamData  alloc] init];
     // version
     [data writeInt:self.version];
     

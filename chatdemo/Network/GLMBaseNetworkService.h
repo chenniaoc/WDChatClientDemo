@@ -9,30 +9,30 @@
 #import <Foundation/Foundation.h>
 #import <ProtocolBuffers/ProtocolBuffers.h>
 #import "Im_base.pb.h"
-#import "GLIMNetworkServiceProtocol.h"
+#import "GLMNetworkServiceProtocol.h"
 #import "cs_header.h"
-#import "GLIM_CS_Header.h"
+#import "GLMCS_Header.h"
 
-#define GLIM_CLIENT_VERSION     @"1.0.0"
-#define GLIM_VERSION            @"1.0.0"
+#define GLM_CLIENT_VERSION     @"1.0.0"
+#define GLM_VERSION            @"1.0.0"
 
-typedef void(^IMCompletionBlock)(id responeObject, NSError *error);
+typedef void(^GLMCompletionBlock)(id responeObject, NSError *error);
 
-@interface GLIMBaseNetworkService : NSObject <GLIMNetworkServiceProtocol>
+@interface GLMBaseNetworkService : NSObject <GLMNetworkServiceProtocol>
 
-@property (nonatomic, copy) IMCompletionBlock completionBlock;
+@property (nonatomic, copy) GLMCompletionBlock completionBlock;
 
 @property (nonatomic, strong) NSString *clientVersion;
 
 @property (nonatomic, strong) NSString *version;
 
 
-- (void)requestWithCompletionBlock:(IMCompletionBlock)block;
+- (void)requestWithCompletionBlock:(GLMCompletionBlock)block;
 
 
-- (GLIM_CS_Header *)csHeader;
+- (GLMCS_Header *)csHeader;
 
-- (UInt32)generateReqId;
+- (UInt32)generateSeqId;
 
 - (CProtocolClientReqBuilder *)generatePBHeader;
 

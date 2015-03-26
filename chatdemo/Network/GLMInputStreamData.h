@@ -1,5 +1,5 @@
 //
-//  WDInputStreamData.h
+//  GLMInputStreamData.h
 //  WDChatDemo
 //
 //  Created by YuchenZhang on 3/25/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WDInputStreamData : NSObject
+@interface GLMInputStreamData : NSObject
 
 + (instancetype)streamWithData:(NSData *)data;
 
