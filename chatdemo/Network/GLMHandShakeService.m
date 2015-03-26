@@ -11,10 +11,9 @@
 
 @implementation GLMHandShakeService
 
-- (GLMCS_Header *)csHeader
+- (E_HEADER_CMD)CS_HEADER_CMD
 {
-    GLMCS_Header *header = [[GLMCS_Header alloc] initWithCMD:HEADER_CMD_HANDSHAKE];
-    return header;
+    return HEADER_CMD_HANDSHAKE;
 }
 
 //- (NSData *)packReqData

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
 		8975D5701AC18ECA009E02D5 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
 		8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
 		8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */; };
@@ -42,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
+		894F99101AC436DD00F49B18 /* GLMProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolManager.h; sourceTree = "<group>"; };
+		894F99111AC436DD00F49B18 /* GLMProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolManager.m; sourceTree = "<group>"; };
+		894F99131AC442B600F49B18 /* GLMProtocolCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolCenter.h; sourceTree = "<group>"; };
 		8975D5711AC21CC3009E02D5 /* GLMNetworkServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLMNetworkServiceProtocol.h; path = ../ProtoBuf/GLMNetworkServiceProtocol.h; sourceTree = "<group>"; };
 		8975D5721AC21E62009E02D5 /* GLMBaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMBaseNetworkService.h; sourceTree = "<group>"; };
 		8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMBaseNetworkService.m; sourceTree = "<group>"; };
@@ -123,6 +127,9 @@
 			children = (
 				8911505B1AC40AEA00A8D008 /* GLMCommon */,
 				891150591AC40A7E00A8D008 /* GLMServices */,
+				894F99101AC436DD00F49B18 /* GLMProtocolManager.h */,
+				894F99111AC436DD00F49B18 /* GLMProtocolManager.m */,
+				894F99131AC442B600F49B18 /* GLMProtocolCenter.h */,
 			);
 			name = GLMProtocolCenter;
 			sourceTree = "<group>";
@@ -353,6 +360,7 @@
 				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,
 				89AC53831AC242E400D8C7C8 /* GLMCS_Header.m in Sources */,
 				898D421E1AB7CC6D004A4303 /* GLMOutputStreamData.m in Sources */,
+				894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */,
 				898D41ED1AB7C480004A4303 /* main.m in Sources */,
 				898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */,
 				8975D5801AC30302009E02D5 /* GLMNetworkUtil.m in Sources */,

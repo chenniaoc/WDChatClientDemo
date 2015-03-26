@@ -25,13 +25,13 @@
     return @"login";
 }
 
-- (GLMCS_Header *)csHeader
+- (E_HEADER_CMD)CS_HEADER_CMD
 {
-    GLMCS_Header *header = [[GLMCS_Header alloc] initWithCMD:HEADER_CMD_LOGIN];
-    return header;
+    return HEADER_CMD_LOGIN;
 }
 
-- (PBGeneratedMessageBuilder *)generatePBBody
+
+- (PBGeneratedMessage *)generatePBBody
 {
     // PB user login
     CUserLoginReqBuilder *lb = [CUserLoginReq builder];
@@ -39,7 +39,18 @@
     [lb setUss:self.uss];
     [lb setClientVersion:[self clientVersion]];
     
-    return lb;
+    return [lb build];
+}
+
+- (BOOL)processForPBResHeader:(CProtocolServerResp*)PBResHeader
+{
+    NSData *pbBodyData = PBResHeader.protocolContent;
+    CUserLoginResp *loginResp = [CUserLoginResp parseFromData:pbBodyData];
+    if (loginResp) {
+        self.completionBlock(loginResp, nil);
+        return YES;
+    }
+    return NO;
 }
 
 @end

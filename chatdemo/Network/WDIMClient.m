@@ -15,6 +15,8 @@
 #import "Im_base.pb.h"
 #import "User.pb.h"
 
+#import "GLMProtocolManager.h"
+
 @interface WDIMClient() <GCDAsyncSocketDelegate>
 
 
@@ -53,7 +55,7 @@
                 
                 TCP_HEADER *copyHeader = (TCP_HEADER *)byteCopy;
                 
-                c.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:c delegateQueue:dispatch_get_global_queue(0, 0)];
+                c.asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:[GLMProtocolManager sharedManager] delegateQueue:dispatch_get_global_queue(0, 0)];
             }
         }
         
@@ -84,6 +86,8 @@
 {
     if(![_asyncSocket isConnected]) return;
     
+    
+    
     GLMHandShakeService *req = [[GLMHandShakeService alloc] init];
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
@@ -109,95 +113,69 @@
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
         
     }];
-    
-//    return;
-//    WDUserLoginApi *login = [[WDUserLoginApi alloc] init];
+}
+
+
+//#pragma mark GCDAsyncSocket
+//
+//- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
+//{
+//    NSLog(@"connected to server %@", host);
+//}
+//
+//- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+//{
+//    NSLog(@"disconnected with error:%@", [err description]);
+//}
+//
+//- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+//{
+//    NSLog(@"didReadData%@", data);
 //    
-//    NSData *data = [login request];
-//    NSLog(@"login req data:%@", data);
-//    [_asyncSocket writeData:data withTimeout:-1 tag:1];
-    
-//    [_asyncSocket readDataWithTimeout:-1 tag:1];
-    
-
-}
-
-- (void)readData
-{
-//    [_asyncSocket readDataWithTimeout:-1 tag:0];
-    
-    dispatch_queue_t alwaysReadQueue = dispatch_queue_create("com.cocoaasyncsocket.alwaysReadQueue", NULL);
-    
-    dispatch_async(alwaysReadQueue, ^{
-        while(![_asyncSocket isDisconnected]) {
-            [NSThread sleepForTimeInterval:5];
-            [_asyncSocket readDataWithTimeout:-1 tag:0];
-        }
-    });
-    
-    
-}
-
-#pragma mark GCDAsyncSocket
-
-- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
-{
-    NSLog(@"connected to server %@", host);
-}
-
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
-{
-    NSLog(@"disconnected with error:%@", [err description]);
-}
-
-- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
-{
-    NSLog(@"didReadData%@", data);
-    
+////    [sock readDataWithTimeout:-1 tag:0];
+//    GLMCS_Header *parsedHeader = [GLMCS_Header headerFromData:data];
+//    
+//    if (parsedHeader) {
+//        // valid header
+//        UInt32 originLength = parsedHeader.org_len;
+//        UInt8 buffer[originLength];
+//        [data getBytes:&buffer range:(NSRange){CS_HEADER_LENGTH, originLength}];
+//        for (int i = 0; i< originLength; i++) {
+//            printf("%02x", buffer[i]);
+//            if ((i + 1) % 4 == 0) {
+//                printf(" ");
+//            }
+//        }
+//        if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE) {
+//            return;
+//        }
+//        
+//        NSData *pbHeader = [NSData dataWithBytes:&buffer length:originLength];
+//        CProtocolServerResp *res = [CProtocolServerResp parseFromData:pbHeader];
+//        if ([res.cmd isEqualToString:@"user"]) {
+//            if ([res.subCmd isEqualToString:@"login"]) {
+//                
+//                NSData *pbBodyData = res.protocolContent;
+//                CUserLoginResp *loginResp = [CUserLoginResp parseFromData:pbBodyData];
+//                
+//                
+//            }
+//        }
+//        
+//        
+//        
+//    }
+//    
 //    [sock readDataWithTimeout:-1 tag:0];
-    GLMCS_Header *parsedHeader = [GLMCS_Header headerFromData:data];
-    
-    if (parsedHeader) {
-        // valid header
-        UInt32 originLength = parsedHeader.org_len;
-        UInt8 buffer[originLength];
-        [data getBytes:&buffer range:(NSRange){CS_HEADER_LENGTH, originLength}];
-        for (int i = 0; i< originLength; i++) {
-            printf("%02x", buffer[i]);
-            if ((i + 1) % 4 == 0) {
-                printf(" ");
-            }
-        }
-        if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE) {
-            return;
-        }
-        
-        NSData *pbHeader = [NSData dataWithBytes:&buffer length:originLength];
-        CProtocolServerResp *res = [CProtocolServerResp parseFromData:pbHeader];
-        if ([res.cmd isEqualToString:@"user"]) {
-            if ([res.subCmd isEqualToString:@"login"]) {
-                
-                NSData *pbBodyData = res.protocolContent;
-                CUserLoginResp *loginResp = [CUserLoginResp parseFromData:pbBodyData];
-                
-                
-            }
-        }
-        
-        
-        
-    }
-    
-    [sock readDataWithTimeout:-1 tag:0];
-    
-}
-
-
-- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
-{
-     NSLog(@"didWriteDataWithTag");
-    [sock readDataWithTimeout:-1 tag:0];
-}
+//    
+//}
+//
+//
+//- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+//{
+//     NSLog(@"didWriteDataWithTag");
+//    [sock readDataWithTimeout:-1 tag:0];
+//}
 
 
 
