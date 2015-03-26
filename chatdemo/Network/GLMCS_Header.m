@@ -27,8 +27,10 @@
             self = [self init];
             self.cmd = HEADER_CMD_LOGIN;
             break;
-            
+
         default:
+            self = [self init];
+            self.cmd = HEADER_CMD_COMMON;
             break;
     }
     

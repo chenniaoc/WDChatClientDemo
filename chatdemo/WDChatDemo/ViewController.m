@@ -42,4 +42,9 @@
     [[WDIMClient instance] readData];
 }
 
+-(IBAction)sendMessage:(id)sender
+{
+    [[WDIMClient instance] sendMessage];
+}
+
 @end

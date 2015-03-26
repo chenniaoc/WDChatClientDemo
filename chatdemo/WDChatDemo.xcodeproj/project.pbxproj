@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890C9CB31AC45D5800AEF9E3 /* GLMSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */; };
 		894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
 		8975D5701AC18ECA009E02D5 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
 		8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		890C9CB11AC45D5800AEF9E3 /* GLMSendMsgService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMSendMsgService.h; sourceTree = "<group>"; };
+		890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMSendMsgService.m; sourceTree = "<group>"; };
 		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
 		894F99101AC436DD00F49B18 /* GLMProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolManager.h; sourceTree = "<group>"; };
 		894F99111AC436DD00F49B18 /* GLMProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolManager.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */,
 				8975D57C1AC2FFF8009E02D5 /* GLMLoginService.h */,
 				8975D57D1AC2FFF8009E02D5 /* GLMLoginService.m */,
+				890C9CB11AC45D5800AEF9E3 /* GLMSendMsgService.h */,
+				890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */,
 			);
 			name = GLMServices;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */,
 				8975D57E1AC2FFF8009E02D5 /* GLMLoginService.m in Sources */,
 				8975D57B1AC2F78A009E02D5 /* GLMHandShakeService.m in Sources */,
+				890C9CB31AC45D5800AEF9E3 /* GLMSendMsgService.m in Sources */,
 				898D41F31AB7C480004A4303 /* ViewController.m in Sources */,
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */,

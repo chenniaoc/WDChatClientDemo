@@ -12,6 +12,7 @@
 #import "GLMCS_Header.h"
 #import "GLMHandShakeService.h"
 #import "GLMLoginService.h"
+#import "GLMSendMsgService.h"
 #import "Im_base.pb.h"
 #import "User.pb.h"
 
@@ -112,6 +113,15 @@
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
         
+    }];
+}
+
+- (void)sendMessage
+{
+    GLMSendMsgService *sendService = [[GLMSendMsgService alloc] init];
+    
+    [sendService requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        NSLog(@"%@", responeObject);
     }];
 }
 

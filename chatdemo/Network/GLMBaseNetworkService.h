@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <ProtocolBuffers/ProtocolBuffers.h>
 #import "Im_base.pb.h"
+#import "Msg.pb.h"
 #import "GLMNetworkServiceProtocol.h"
 #import "cs_header.h"
 #import "GLMCS_Header.h"
+
 
 
 typedef void(^GLMCompletionBlock)(id responeObject, NSError *error);

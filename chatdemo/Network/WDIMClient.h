@@ -25,6 +25,8 @@
 
 - (void)login;
 
+- (void)sendMessage;
+
 - (void)readData;
 
 @end
