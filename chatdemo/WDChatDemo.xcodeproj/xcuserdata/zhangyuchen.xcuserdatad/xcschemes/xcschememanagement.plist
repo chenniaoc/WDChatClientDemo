@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CommandLine.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>MacUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>WDChatDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +28,21 @@
 			<true/>
 		</dict>
 		<key>898D41FF1AB7C480004A4303</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89AD25531AC5342600F8854B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89AD25861AC5370300F8854B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>89AD25981AC5370400F8854B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

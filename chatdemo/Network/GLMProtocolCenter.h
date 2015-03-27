@@ -10,6 +10,7 @@
 
 #import "GLMProtocolContext.h"
 #import "GLMError.h"
+#import "GLMBaseNetworkService.h"
 
 #define GLM_CLIENT_VERSION     @"1.0.0"
 #define GLM_VERSION            @"1.0.0"

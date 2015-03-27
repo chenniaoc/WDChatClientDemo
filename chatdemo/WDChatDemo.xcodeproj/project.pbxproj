@@ -27,6 +27,89 @@
 		898D421E1AB7CC6D004A4303 /* GLMOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */; };
 		89AC53831AC242E400D8C7C8 /* GLMCS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */; };
 		89AD254F1AC4FF2C00F8854B /* GLMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254E1AC4FF2C00F8854B /* GLMError.m */; };
+		89AD25571AC5342600F8854B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD25561AC5342600F8854B /* main.m */; };
+		89AD255D1AC5355D00F8854B /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
+		89AD255E1AC5359D00F8854B /* Follow.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43031AC0251D001DB012 /* Follow.pb.h */; };
+		89AD255F1AC5359D00F8854B /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
+		89AD25601AC5359D00F8854B /* Im_base.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43051AC0251D001DB012 /* Im_base.pb.h */; };
+		89AD25611AC5359D00F8854B /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
+		89AD25621AC5359D00F8854B /* Msg.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43071AC0251D001DB012 /* Msg.pb.h */; };
+		89AD25631AC5359D00F8854B /* Msg.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43081AC0251D001DB012 /* Msg.pb.m */; };
+		89AD25641AC5359D00F8854B /* User.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43091AC0251D001DB012 /* User.pb.h */; };
+		89AD25651AC5359D00F8854B /* User.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF430A1AC0251D001DB012 /* User.pb.m */; };
+		89AD25661AC535AD00F8854B /* cs_header.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42181AB7C889004A4303 /* cs_header.h */; };
+		89AD25671AC535AD00F8854B /* GLMCS_Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53811AC242E400D8C7C8 /* GLMCS_Header.h */; };
+		89AD25681AC535AD00F8854B /* GLMCS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */; };
+		89AD25691AC535AD00F8854B /* GLMNetworkUtil.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5751AC22065009E02D5 /* GLMNetworkUtil.h */; };
+		89AD256A1AC535AD00F8854B /* GLMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57F1AC30302009E02D5 /* GLMNetworkUtil.m */; };
+		89AD256B1AC535AD00F8854B /* GLMOutputStreamData.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D421C1AB7CC6D004A4303 /* GLMOutputStreamData.h */; };
+		89AD256C1AC535AD00F8854B /* GLMOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */; };
+		89AD256D1AC535AD00F8854B /* GLMInputStreamData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5761AC2ED83009E02D5 /* GLMInputStreamData.h */; };
+		89AD256E1AC535AD00F8854B /* GLMInputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */; };
+		89AD256F1AC535AD00F8854B /* GLMProtocolContext.h in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30961AC4F8F600236010 /* GLMProtocolContext.h */; };
+		89AD25701AC535AD00F8854B /* GLMProtocolContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30971AC4F8F600236010 /* GLMProtocolContext.m */; };
+		89AD25711AC535AD00F8854B /* GLMError.h in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254D1AC4FF2C00F8854B /* GLMError.h */; };
+		89AD25721AC535AD00F8854B /* GLMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254E1AC4FF2C00F8854B /* GLMError.m */; };
+		89AD25731AC535AD00F8854B /* GLMMessageSendMsgService.h in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */; };
+		89AD25741AC535AD00F8854B /* GLMMessageSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */; };
+		89AD25751AC535AD00F8854B /* GLMHandShakeService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5791AC2F78A009E02D5 /* GLMHandShakeService.h */; };
+		89AD25761AC535AD00F8854B /* GLMHandShakeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */; };
+		89AD25771AC535AD00F8854B /* GLMUserLoginService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57C1AC2FFF8009E02D5 /* GLMUserLoginService.h */; };
+		89AD25781AC535AD00F8854B /* GLMUserLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57D1AC2FFF8009E02D5 /* GLMUserLoginService.m */; };
+		89AD25791AC535AD00F8854B /* GLMNetworkServiceProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5711AC21CC3009E02D5 /* GLMNetworkServiceProtocol.h */; };
+		89AD257A1AC535AD00F8854B /* GLMBaseNetworkService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5721AC21E62009E02D5 /* GLMBaseNetworkService.h */; };
+		89AD257B1AC535AD00F8854B /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
+		89AD257C1AC535AD00F8854B /* GLMProtocolManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 894F99101AC436DD00F49B18 /* GLMProtocolManager.h */; };
+		89AD257D1AC535AD00F8854B /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
+		89AD257E1AC535AD00F8854B /* GLMProtocolCenter.h in Sources */ = {isa = PBXBuildFile; fileRef = 894F99131AC442B600F49B18 /* GLMProtocolCenter.h */; };
+		89AD257F1AC535AD00F8854B /* WDIMClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42151AB7C53F004A4303 /* WDIMClient.h */; };
+		89AD25801AC535AD00F8854B /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
+		89AD25811AC535AD00F8854B /* GCDAsyncSocket.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42111AB7C4CD004A4303 /* GCDAsyncSocket.h */; };
+		89AD25821AC535AD00F8854B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42121AB7C4CD004A4303 /* GCDAsyncSocket.m */; };
+		89AD258D1AC5370400F8854B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD258C1AC5370400F8854B /* AppDelegate.m */; };
+		89AD258F1AC5370400F8854B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD258E1AC5370400F8854B /* main.m */; };
+		89AD25911AC5370400F8854B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89AD25901AC5370400F8854B /* Images.xcassets */; };
+		89AD25941AC5370400F8854B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AD25921AC5370400F8854B /* MainMenu.xib */; };
+		89AD25A01AC5370400F8854B /* MacUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD259F1AC5370400F8854B /* MacUITests.m */; };
+		89AD25A71AC5378E00F8854B /* Follow.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43031AC0251D001DB012 /* Follow.pb.h */; };
+		89AD25A81AC5378E00F8854B /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
+		89AD25A91AC5378E00F8854B /* Im_base.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43051AC0251D001DB012 /* Im_base.pb.h */; };
+		89AD25AA1AC5378E00F8854B /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
+		89AD25AB1AC5378E00F8854B /* Msg.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43071AC0251D001DB012 /* Msg.pb.h */; };
+		89AD25AC1AC5378E00F8854B /* Msg.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43081AC0251D001DB012 /* Msg.pb.m */; };
+		89AD25AD1AC5378E00F8854B /* User.pb.h in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43091AC0251D001DB012 /* User.pb.h */; };
+		89AD25AE1AC5378E00F8854B /* User.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF430A1AC0251D001DB012 /* User.pb.m */; };
+		89AD25AF1AC5378E00F8854B /* cs_header.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42181AB7C889004A4303 /* cs_header.h */; };
+		89AD25B01AC5378E00F8854B /* GLMCS_Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53811AC242E400D8C7C8 /* GLMCS_Header.h */; };
+		89AD25B11AC5378E00F8854B /* GLMCS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */; };
+		89AD25B21AC5378E00F8854B /* GLMNetworkUtil.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5751AC22065009E02D5 /* GLMNetworkUtil.h */; };
+		89AD25B31AC5378E00F8854B /* GLMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57F1AC30302009E02D5 /* GLMNetworkUtil.m */; };
+		89AD25B41AC5378E00F8854B /* GLMOutputStreamData.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D421C1AB7CC6D004A4303 /* GLMOutputStreamData.h */; };
+		89AD25B51AC5378E00F8854B /* GLMOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */; };
+		89AD25B61AC5378E00F8854B /* GLMInputStreamData.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5761AC2ED83009E02D5 /* GLMInputStreamData.h */; };
+		89AD25B71AC5378E00F8854B /* GLMInputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */; };
+		89AD25B81AC5378E00F8854B /* GLMProtocolContext.h in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30961AC4F8F600236010 /* GLMProtocolContext.h */; };
+		89AD25B91AC5378E00F8854B /* GLMProtocolContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30971AC4F8F600236010 /* GLMProtocolContext.m */; };
+		89AD25BA1AC5378E00F8854B /* GLMError.h in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254D1AC4FF2C00F8854B /* GLMError.h */; };
+		89AD25BB1AC5378E00F8854B /* GLMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254E1AC4FF2C00F8854B /* GLMError.m */; };
+		89AD25BC1AC5378E00F8854B /* GLMMessageSendMsgService.h in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */; };
+		89AD25BD1AC5378E00F8854B /* GLMMessageSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */; };
+		89AD25BE1AC5378E00F8854B /* GLMHandShakeService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5791AC2F78A009E02D5 /* GLMHandShakeService.h */; };
+		89AD25BF1AC5378E00F8854B /* GLMHandShakeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */; };
+		89AD25C01AC5378E00F8854B /* GLMUserLoginService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57C1AC2FFF8009E02D5 /* GLMUserLoginService.h */; };
+		89AD25C11AC5378E00F8854B /* GLMUserLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57D1AC2FFF8009E02D5 /* GLMUserLoginService.m */; };
+		89AD25C21AC5378E00F8854B /* GLMNetworkServiceProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5711AC21CC3009E02D5 /* GLMNetworkServiceProtocol.h */; };
+		89AD25C31AC5378E00F8854B /* GLMBaseNetworkService.h in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5721AC21E62009E02D5 /* GLMBaseNetworkService.h */; };
+		89AD25C41AC5378E00F8854B /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
+		89AD25C51AC5378E00F8854B /* GLMProtocolManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 894F99101AC436DD00F49B18 /* GLMProtocolManager.h */; };
+		89AD25C61AC5378E00F8854B /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
+		89AD25C71AC5378E00F8854B /* GLMProtocolCenter.h in Sources */ = {isa = PBXBuildFile; fileRef = 894F99131AC442B600F49B18 /* GLMProtocolCenter.h */; };
+		89AD25C81AC5378E00F8854B /* WDIMClient.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42151AB7C53F004A4303 /* WDIMClient.h */; };
+		89AD25C91AC5378E00F8854B /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
+		89AD25CA1AC5378E00F8854B /* GCDAsyncSocket.h in Sources */ = {isa = PBXBuildFile; fileRef = 898D42111AB7C4CD004A4303 /* GCDAsyncSocket.h */; };
+		89AD25CB1AC5378E00F8854B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42121AB7C4CD004A4303 /* GCDAsyncSocket.m */; };
+		89AD25CD1AC537A500F8854B /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
+		89AD25D01AC53D7F00F8854B /* GLMActionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD25CF1AC53D7F00F8854B /* GLMActionDelegate.m */; };
 		89CC30981AC4F8F600236010 /* GLMProtocolContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30971AC4F8F600236010 /* GLMProtocolContext.m */; };
 		89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
 		89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
@@ -42,7 +125,26 @@
 			remoteGlobalIDString = 898D41E61AB7C480004A4303;
 			remoteInfo = WDChatDemo;
 		};
+		89AD259A1AC5370400F8854B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 898D41DF1AB7C480004A4303 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89AD25861AC5370300F8854B;
+			remoteInfo = MacUI;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		89AD25521AC5342600F8854B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageSendMsgService.h; sourceTree = "<group>"; };
@@ -86,6 +188,20 @@
 		89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMCS_Header.m; sourceTree = "<group>"; };
 		89AD254D1AC4FF2C00F8854B /* GLMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMError.h; sourceTree = "<group>"; };
 		89AD254E1AC4FF2C00F8854B /* GLMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMError.m; sourceTree = "<group>"; };
+		89AD25541AC5342600F8854B /* CommandLine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CommandLine; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AD25561AC5342600F8854B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89AD25871AC5370300F8854B /* MacUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AD258A1AC5370400F8854B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AD258B1AC5370400F8854B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		89AD258C1AC5370400F8854B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89AD258E1AC5370400F8854B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89AD25901AC5370400F8854B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89AD25931AC5370400F8854B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		89AD25991AC5370400F8854B /* MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AD259E1AC5370400F8854B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AD259F1AC5370400F8854B /* MacUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacUITests.m; sourceTree = "<group>"; };
+		89AD25CE1AC53D7F00F8854B /* GLMActionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMActionDelegate.h; sourceTree = "<group>"; };
+		89AD25CF1AC53D7F00F8854B /* GLMActionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMActionDelegate.m; sourceTree = "<group>"; };
 		89CC30961AC4F8F600236010 /* GLMProtocolContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolContext.h; sourceTree = "<group>"; };
 		89CC30971AC4F8F600236010 /* GLMProtocolContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolContext.m; sourceTree = "<group>"; };
 		89FF43031AC0251D001DB012 /* Follow.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.pb.h; sourceTree = "<group>"; };
@@ -108,6 +224,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		898D41FD1AB7C480004A4303 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25511AC5342600F8854B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD255D1AC5355D00F8854B /* ProtocolBuffers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25841AC5370300F8854B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD25CD1AC537A500F8854B /* ProtocolBuffers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25961AC5370400F8854B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,6 +337,9 @@
 				898D42101AB7C4CD004A4303 /* TCP */,
 				898D41E91AB7C480004A4303 /* WDChatDemo */,
 				898D42031AB7C480004A4303 /* WDChatDemoTests */,
+				89AD25551AC5342600F8854B /* CommandLine */,
+				89AD25881AC5370300F8854B /* MacUI */,
+				89AD259C1AC5370400F8854B /* MacUITests */,
 				898D41E81AB7C480004A4303 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,6 +349,9 @@
 			children = (
 				898D41E71AB7C480004A4303 /* WDChatDemo.app */,
 				898D42001AB7C480004A4303 /* WDChatDemoTests.xctest */,
+				89AD25541AC5342600F8854B /* CommandLine */,
+				89AD25871AC5370300F8854B /* MacUI.app */,
+				89AD25991AC5370400F8854B /* MacUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,6 +416,54 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		89AD25551AC5342600F8854B /* CommandLine */ = {
+			isa = PBXGroup;
+			children = (
+				89AD25561AC5342600F8854B /* main.m */,
+			);
+			path = CommandLine;
+			sourceTree = "<group>";
+		};
+		89AD25881AC5370300F8854B /* MacUI */ = {
+			isa = PBXGroup;
+			children = (
+				89AD258B1AC5370400F8854B /* AppDelegate.h */,
+				89AD258C1AC5370400F8854B /* AppDelegate.m */,
+				89AD25CE1AC53D7F00F8854B /* GLMActionDelegate.h */,
+				89AD25CF1AC53D7F00F8854B /* GLMActionDelegate.m */,
+				89AD25901AC5370400F8854B /* Images.xcassets */,
+				89AD25921AC5370400F8854B /* MainMenu.xib */,
+				89AD25891AC5370400F8854B /* Supporting Files */,
+			);
+			path = MacUI;
+			sourceTree = "<group>";
+		};
+		89AD25891AC5370400F8854B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89AD258A1AC5370400F8854B /* Info.plist */,
+				89AD258E1AC5370400F8854B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89AD259C1AC5370400F8854B /* MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89AD259F1AC5370400F8854B /* MacUITests.m */,
+				89AD259D1AC5370400F8854B /* Supporting Files */,
+			);
+			path = MacUITests;
+			sourceTree = "<group>";
+		};
+		89AD259D1AC5370400F8854B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89AD259E1AC5370400F8854B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		89FF43021AC0251D001DB012 /* ProtoBuf */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +517,58 @@
 			productReference = 898D42001AB7C480004A4303 /* WDChatDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		89AD25531AC5342600F8854B /* CommandLine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89AD25581AC5342600F8854B /* Build configuration list for PBXNativeTarget "CommandLine" */;
+			buildPhases = (
+				89AD25501AC5342600F8854B /* Sources */,
+				89AD25511AC5342600F8854B /* Frameworks */,
+				89AD25521AC5342600F8854B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommandLine;
+			productName = CommandLine;
+			productReference = 89AD25541AC5342600F8854B /* CommandLine */;
+			productType = "com.apple.product-type.tool";
+		};
+		89AD25861AC5370300F8854B /* MacUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89AD25A11AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUI" */;
+			buildPhases = (
+				89AD25831AC5370300F8854B /* Sources */,
+				89AD25841AC5370300F8854B /* Frameworks */,
+				89AD25851AC5370300F8854B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacUI;
+			productName = MacUI;
+			productReference = 89AD25871AC5370300F8854B /* MacUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89AD25981AC5370400F8854B /* MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89AD25A41AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUITests" */;
+			buildPhases = (
+				89AD25951AC5370400F8854B /* Sources */,
+				89AD25961AC5370400F8854B /* Frameworks */,
+				89AD25971AC5370400F8854B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89AD259B1AC5370400F8854B /* PBXTargetDependency */,
+			);
+			name = MacUITests;
+			productName = MacUITests;
+			productReference = 89AD25991AC5370400F8854B /* MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -339,6 +584,16 @@
 					898D41FF1AB7C480004A4303 = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 898D41E61AB7C480004A4303;
+					};
+					89AD25531AC5342600F8854B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					89AD25861AC5370300F8854B = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					89AD25981AC5370400F8854B = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 89AD25861AC5370300F8854B;
 					};
 				};
 			};
@@ -357,6 +612,9 @@
 			targets = (
 				898D41E61AB7C480004A4303 /* WDChatDemo */,
 				898D41FF1AB7C480004A4303 /* WDChatDemoTests */,
+				89AD25531AC5342600F8854B /* CommandLine */,
+				89AD25861AC5370300F8854B /* MacUI */,
+				89AD25981AC5370400F8854B /* MacUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -373,6 +631,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		898D41FE1AB7C480004A4303 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25851AC5370300F8854B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD25911AC5370400F8854B /* Images.xcassets in Resources */,
+				89AD25941AC5370400F8854B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25971AC5370400F8854B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -417,6 +691,106 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		89AD25501AC5342600F8854B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD25661AC535AD00F8854B /* cs_header.h in Sources */,
+				89AD25671AC535AD00F8854B /* GLMCS_Header.h in Sources */,
+				89AD25681AC535AD00F8854B /* GLMCS_Header.m in Sources */,
+				89AD25691AC535AD00F8854B /* GLMNetworkUtil.h in Sources */,
+				89AD256A1AC535AD00F8854B /* GLMNetworkUtil.m in Sources */,
+				89AD256B1AC535AD00F8854B /* GLMOutputStreamData.h in Sources */,
+				89AD256C1AC535AD00F8854B /* GLMOutputStreamData.m in Sources */,
+				89AD256D1AC535AD00F8854B /* GLMInputStreamData.h in Sources */,
+				89AD256E1AC535AD00F8854B /* GLMInputStreamData.m in Sources */,
+				89AD256F1AC535AD00F8854B /* GLMProtocolContext.h in Sources */,
+				89AD25701AC535AD00F8854B /* GLMProtocolContext.m in Sources */,
+				89AD25711AC535AD00F8854B /* GLMError.h in Sources */,
+				89AD25721AC535AD00F8854B /* GLMError.m in Sources */,
+				89AD25731AC535AD00F8854B /* GLMMessageSendMsgService.h in Sources */,
+				89AD25741AC535AD00F8854B /* GLMMessageSendMsgService.m in Sources */,
+				89AD25751AC535AD00F8854B /* GLMHandShakeService.h in Sources */,
+				89AD25761AC535AD00F8854B /* GLMHandShakeService.m in Sources */,
+				89AD25771AC535AD00F8854B /* GLMUserLoginService.h in Sources */,
+				89AD25781AC535AD00F8854B /* GLMUserLoginService.m in Sources */,
+				89AD25791AC535AD00F8854B /* GLMNetworkServiceProtocol.h in Sources */,
+				89AD257A1AC535AD00F8854B /* GLMBaseNetworkService.h in Sources */,
+				89AD257B1AC535AD00F8854B /* GLMBaseNetworkService.m in Sources */,
+				89AD257C1AC535AD00F8854B /* GLMProtocolManager.h in Sources */,
+				89AD257D1AC535AD00F8854B /* GLMProtocolManager.m in Sources */,
+				89AD257E1AC535AD00F8854B /* GLMProtocolCenter.h in Sources */,
+				89AD257F1AC535AD00F8854B /* WDIMClient.h in Sources */,
+				89AD25801AC535AD00F8854B /* WDIMClient.m in Sources */,
+				89AD25811AC535AD00F8854B /* GCDAsyncSocket.h in Sources */,
+				89AD25821AC535AD00F8854B /* GCDAsyncSocket.m in Sources */,
+				89AD255E1AC5359D00F8854B /* Follow.pb.h in Sources */,
+				89AD255F1AC5359D00F8854B /* Follow.pb.m in Sources */,
+				89AD25601AC5359D00F8854B /* Im_base.pb.h in Sources */,
+				89AD25611AC5359D00F8854B /* Im_base.pb.m in Sources */,
+				89AD25621AC5359D00F8854B /* Msg.pb.h in Sources */,
+				89AD25631AC5359D00F8854B /* Msg.pb.m in Sources */,
+				89AD25641AC5359D00F8854B /* User.pb.h in Sources */,
+				89AD25651AC5359D00F8854B /* User.pb.m in Sources */,
+				89AD25571AC5342600F8854B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25831AC5370300F8854B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD25A71AC5378E00F8854B /* Follow.pb.h in Sources */,
+				89AD25A81AC5378E00F8854B /* Follow.pb.m in Sources */,
+				89AD25A91AC5378E00F8854B /* Im_base.pb.h in Sources */,
+				89AD25AA1AC5378E00F8854B /* Im_base.pb.m in Sources */,
+				89AD25AB1AC5378E00F8854B /* Msg.pb.h in Sources */,
+				89AD25AC1AC5378E00F8854B /* Msg.pb.m in Sources */,
+				89AD25AD1AC5378E00F8854B /* User.pb.h in Sources */,
+				89AD25AE1AC5378E00F8854B /* User.pb.m in Sources */,
+				89AD25AF1AC5378E00F8854B /* cs_header.h in Sources */,
+				89AD25B01AC5378E00F8854B /* GLMCS_Header.h in Sources */,
+				89AD25B11AC5378E00F8854B /* GLMCS_Header.m in Sources */,
+				89AD25B21AC5378E00F8854B /* GLMNetworkUtil.h in Sources */,
+				89AD25B31AC5378E00F8854B /* GLMNetworkUtil.m in Sources */,
+				89AD25B41AC5378E00F8854B /* GLMOutputStreamData.h in Sources */,
+				89AD25B51AC5378E00F8854B /* GLMOutputStreamData.m in Sources */,
+				89AD25B61AC5378E00F8854B /* GLMInputStreamData.h in Sources */,
+				89AD25B71AC5378E00F8854B /* GLMInputStreamData.m in Sources */,
+				89AD25B81AC5378E00F8854B /* GLMProtocolContext.h in Sources */,
+				89AD25B91AC5378E00F8854B /* GLMProtocolContext.m in Sources */,
+				89AD25BA1AC5378E00F8854B /* GLMError.h in Sources */,
+				89AD25BB1AC5378E00F8854B /* GLMError.m in Sources */,
+				89AD25BC1AC5378E00F8854B /* GLMMessageSendMsgService.h in Sources */,
+				89AD25BD1AC5378E00F8854B /* GLMMessageSendMsgService.m in Sources */,
+				89AD25D01AC53D7F00F8854B /* GLMActionDelegate.m in Sources */,
+				89AD25BE1AC5378E00F8854B /* GLMHandShakeService.h in Sources */,
+				89AD25BF1AC5378E00F8854B /* GLMHandShakeService.m in Sources */,
+				89AD25C01AC5378E00F8854B /* GLMUserLoginService.h in Sources */,
+				89AD25C11AC5378E00F8854B /* GLMUserLoginService.m in Sources */,
+				89AD25C21AC5378E00F8854B /* GLMNetworkServiceProtocol.h in Sources */,
+				89AD25C31AC5378E00F8854B /* GLMBaseNetworkService.h in Sources */,
+				89AD25C41AC5378E00F8854B /* GLMBaseNetworkService.m in Sources */,
+				89AD25C51AC5378E00F8854B /* GLMProtocolManager.h in Sources */,
+				89AD25C61AC5378E00F8854B /* GLMProtocolManager.m in Sources */,
+				89AD25C71AC5378E00F8854B /* GLMProtocolCenter.h in Sources */,
+				89AD25C81AC5378E00F8854B /* WDIMClient.h in Sources */,
+				89AD25C91AC5378E00F8854B /* WDIMClient.m in Sources */,
+				89AD25CA1AC5378E00F8854B /* GCDAsyncSocket.h in Sources */,
+				89AD25CB1AC5378E00F8854B /* GCDAsyncSocket.m in Sources */,
+				89AD258F1AC5370400F8854B /* main.m in Sources */,
+				89AD258D1AC5370400F8854B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89AD25951AC5370400F8854B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89AD25A01AC5370400F8854B /* MacUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -424,6 +798,11 @@
 			isa = PBXTargetDependency;
 			target = 898D41E61AB7C480004A4303 /* WDChatDemo */;
 			targetProxy = 898D42011AB7C480004A4303 /* PBXContainerItemProxy */;
+		};
+		89AD259B1AC5370400F8854B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89AD25861AC5370300F8854B /* MacUI */;
+			targetProxy = 89AD259A1AC5370400F8854B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -442,6 +821,14 @@
 				898D41FA1AB7C480004A4303 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		89AD25921AC5370400F8854B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89AD25931AC5370400F8854B /* Base */,
+			);
+			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -587,6 +974,119 @@
 			};
 			name = Release;
 		};
+		89AD25591AC5342600F8854B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		89AD255A1AC5342600F8854B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		89AD25A21AC5370400F8854B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		89AD25A31AC5370400F8854B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+				);
+				INFOPLIST_FILE = MacUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		89AD25A51AC5370400F8854B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacUI.app/Contents/MacOS/MacUI";
+			};
+			name = Debug;
+		};
+		89AD25A61AC5370400F8854B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacUI.app/Contents/MacOS/MacUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -616,6 +1116,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		89AD25581AC5342600F8854B /* Build configuration list for PBXNativeTarget "CommandLine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AD25591AC5342600F8854B /* Debug */,
+				89AD255A1AC5342600F8854B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		89AD25A11AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AD25A21AC5370400F8854B /* Debug */,
+				89AD25A31AC5370400F8854B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		89AD25A41AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89AD25A51AC5370400F8854B /* Debug */,
+				89AD25A61AC5370400F8854B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

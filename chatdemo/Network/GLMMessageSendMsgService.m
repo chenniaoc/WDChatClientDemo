@@ -27,10 +27,11 @@
     NSTimeInterval  now_timestamp = [[NSDate date] timeIntervalSince1970];
     
     
-    builder.fromUid = 7593173432823256053l;
-    builder.toUid = 7593173432823256054l;
+    builder.fromUid = self.from_uid;
+    builder.toUid = self.to_uid;
 //    builder.msgid = now_timestamp;
-    builder.msgData = @"hello world";
+//    [self.messageContent dataUsingEncoding:NSUTF8StringEncoding];
+    builder.msgData = self.messageContent;
     builder.time = now_timestamp;
     builder.msgType = EConstMsgTypesMsgTypeNormal;
     builder.msgMediaType = EConstMsgMediaTypesMsgMediaTypeText;

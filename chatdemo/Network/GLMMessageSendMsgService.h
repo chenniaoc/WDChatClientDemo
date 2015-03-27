@@ -13,6 +13,7 @@
 @property (nonatomic, assign) UInt64 from_uid;
 @property (nonatomic, assign) UInt64 to_uid;
 @property (nonatomic, assign) UInt64 time;
+@property (nonatomic, strong) NSString *messageContent;
 
 
 @end

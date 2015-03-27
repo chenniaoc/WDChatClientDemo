@@ -118,10 +118,50 @@
     }];
 }
 
+- (void)loginWithUserID:(NSString *)userID
+                    uss:(NSString *)uss
+             completion:(GLMCompletionBlock)completion
+{
+    GLMUserLoginService *req = [[GLMUserLoginService alloc] init];
+    req.sid = userID;
+    req.uss = uss;
+    
+    if (completion) {
+        [req requestWithCompletionBlock:completion];
+        
+        return;
+    }
+    [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        NSLog(@"%@ \nerror:%@", responeObject, error);
+        
+        //        NSLog(@"%@", responeObject[@"uid"]);
+    }];
+}
+
 - (void)sendMessage
 {
     GLMMessageSendMsgService *sendService = [[GLMMessageSendMsgService alloc] init];
-    
+    sendService.from_uid = GLMGetProtocolContext().userID;
+//    sendService.to_uid = [uid longLongValue];
+//    sendService.messageContent = content;
+    [sendService requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        NSLog(@"%@", responeObject);
+    }];
+}
+
+- (void)sendMessageToUid:(NSString *)uid
+                 content:(NSString *)content
+              completion:(GLMCompletionBlock)completionBlock
+{
+    GLMMessageSendMsgService *sendService = [[GLMMessageSendMsgService alloc] init];
+    sendService.from_uid = GLMGetProtocolContext().userID;
+    sendService.to_uid = [uid longLongValue];
+    sendService.messageContent = content;
+    if (completionBlock) {
+        [sendService requestWithCompletionBlock:completionBlock];
+        
+        return;
+    }
     [sendService requestWithCompletionBlock:^(id responeObject, NSError *error) {
         NSLog(@"%@", responeObject);
     }];
@@ -188,7 +228,6 @@
 //     NSLog(@"didWriteDataWithTag");
 //    [sock readDataWithTimeout:-1 tag:0];
 //}
-
 
 
 
