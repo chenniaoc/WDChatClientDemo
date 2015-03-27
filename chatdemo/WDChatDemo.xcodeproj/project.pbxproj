@@ -25,6 +25,9 @@
 		898D42131AB7C4CD004A4303 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42121AB7C4CD004A4303 /* GCDAsyncSocket.m */; };
 		898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
 		898D421E1AB7CC6D004A4303 /* GLMOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */; };
+		89A3609C1AC5529200214283 /* GLMMessageSendNotifyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A3609B1AC5529200214283 /* GLMMessageSendNotifyService.m */; };
+		89A3609D1AC5563F00214283 /* GLMMessageSendNotifyService.h in Sources */ = {isa = PBXBuildFile; fileRef = 89A3609A1AC5529200214283 /* GLMMessageSendNotifyService.h */; };
+		89A3609E1AC5563F00214283 /* GLMMessageSendNotifyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A3609B1AC5529200214283 /* GLMMessageSendNotifyService.m */; };
 		89AC53831AC242E400D8C7C8 /* GLMCS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */; };
 		89AD254F1AC4FF2C00F8854B /* GLMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254E1AC4FF2C00F8854B /* GLMError.m */; };
 		89AD25571AC5342600F8854B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD25561AC5342600F8854B /* main.m */; };
@@ -184,6 +187,8 @@
 		898D42181AB7C889004A4303 /* cs_header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cs_header.h; sourceTree = "<group>"; };
 		898D421C1AB7CC6D004A4303 /* GLMOutputStreamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMOutputStreamData.h; sourceTree = "<group>"; };
 		898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMOutputStreamData.m; sourceTree = "<group>"; };
+		89A3609A1AC5529200214283 /* GLMMessageSendNotifyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageSendNotifyService.h; sourceTree = "<group>"; };
+		89A3609B1AC5529200214283 /* GLMMessageSendNotifyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMMessageSendNotifyService.m; sourceTree = "<group>"; };
 		89AC53811AC242E400D8C7C8 /* GLMCS_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMCS_Header.h; sourceTree = "<group>"; };
 		89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMCS_Header.m; sourceTree = "<group>"; };
 		89AD254D1AC4FF2C00F8854B /* GLMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMError.h; sourceTree = "<group>"; };
@@ -324,6 +329,8 @@
 			children = (
 				890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */,
 				890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */,
+				89A3609A1AC5529200214283 /* GLMMessageSendNotifyService.h */,
+				89A3609B1AC5529200214283 /* GLMMessageSendNotifyService.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -673,6 +680,7 @@
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */,
 				8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */,
+				89A3609C1AC5529200214283 /* GLMMessageSendNotifyService.m in Sources */,
 				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,
 				89AC53831AC242E400D8C7C8 /* GLMCS_Header.m in Sources */,
 				898D421E1AB7CC6D004A4303 /* GLMOutputStreamData.m in Sources */,
@@ -740,6 +748,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A3609D1AC5563F00214283 /* GLMMessageSendNotifyService.h in Sources */,
+				89A3609E1AC5563F00214283 /* GLMMessageSendNotifyService.m in Sources */,
 				89AD25A71AC5378E00F8854B /* Follow.pb.h in Sources */,
 				89AD25A81AC5378E00F8854B /* Follow.pb.m in Sources */,
 				89AD25A91AC5378E00F8854B /* Im_base.pb.h in Sources */,
@@ -1124,6 +1134,7 @@
 				89AD255A1AC5342600F8854B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89AD25A11AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUI" */ = {
 			isa = XCConfigurationList;
@@ -1132,6 +1143,7 @@
 				89AD25A31AC5370400F8854B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89AD25A41AC5370400F8854B /* Build configuration list for PBXNativeTarget "MacUITests" */ = {
 			isa = XCConfigurationList;
@@ -1140,6 +1152,7 @@
 				89AD25A61AC5370400F8854B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

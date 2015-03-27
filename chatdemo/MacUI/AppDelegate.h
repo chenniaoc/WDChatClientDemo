@@ -23,6 +23,8 @@
 
 @property (nonatomic, assign) IBOutlet NSTextField *msgContentField;
 
+@property (nonatomic, assign) IBOutlet NSTextField *chatMessageView;
+
 - (IBAction)handShake:(id)sender;
 
 - (IBAction)loginClicked:(id)sender;

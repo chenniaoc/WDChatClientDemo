@@ -12,6 +12,9 @@
 #import "GLMError.h"
 #import "GLMBaseNetworkService.h"
 
+
+#define GLM_MESSAGE_NOTIFY_NOTIFICATION @"GLM_MESSAGE_NOTIFY_NOTIFICATION"
+
 #define GLM_CLIENT_VERSION     @"1.0.0"
 #define GLM_VERSION            @"1.0.0"
 

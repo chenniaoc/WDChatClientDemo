@@ -21,6 +21,12 @@
     // Insert code here to initialize your application
 //    WDIMClient *client = [WDIMClient instance];
     [[WDIMClient instance] startService];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receviedNewMessage:)
+                                                 name:GLM_MESSAGE_NOTIFY_NOTIFICATION
+                                               object:nil];
 //    [client startService];
     
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -38,6 +44,12 @@
     
 }
 
+- (void)receviedNewMessage:(NSNotification *)nofity
+{
+    _chatMessageView.stringValue = [NSString stringWithFormat:@"%@\n%@",_chatMessageView.stringValue, nofity.object];
+
+}
+
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
 }
@@ -50,6 +62,11 @@
 - (IBAction)loginClicked:(id)sender
 {
     
+    
+    
+    
+    
+    
     NSString *uid = [_userIDField stringValue];;
     
     NSString *uss = [_wdussDField stringValue];
@@ -58,6 +75,19 @@
                                        uss:uss
                                 completion:^(id responeObject, NSError *error) {
         NSLog(@"%@ %@", responeObject, error);
+                                    
+                                    if (error) {
+                                        NSAlert *alert = [NSAlert alertWithError:error];
+                                        [alert beginSheetModalForWindow:_window completionHandler:^(NSModalResponse returnCode) {
+                                            
+                                        }];
+                                    } else {
+                                        NSAlert *alert = [NSAlert alertWithMessageText:@"登录成功" defaultButton:@"ok" alternateButton:@"" otherButton:@"" informativeTextWithFormat:@""];
+                                        [alert beginSheetModalForWindow:_window completionHandler:^(NSModalResponse returnCode) {
+                                            
+                                        }];
+                                    }
+                                    
     }];
 }
 
@@ -71,6 +101,17 @@
                                     content:messageContent
                                  completion:^(id responeObject, NSError *error) {
         NSLog(@"%@ %@", responeObject, error);
+                                     if (error) {
+                                         NSAlert *alert = [NSAlert alertWithError:error];
+                                         [alert beginSheetModalForWindow:_window completionHandler:^(NSModalResponse returnCode) {
+                                             
+                                         }];
+                                     } else {
+                                         _chatMessageView.stringValue = [NSString stringWithFormat:@"%@\n%@",_chatMessageView.stringValue, messageContent];
+                                     }
+                                     
+                                     
+                            
     }];
 
 }

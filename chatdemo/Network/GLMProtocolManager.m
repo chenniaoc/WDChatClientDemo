@@ -9,6 +9,7 @@
 #import "GLMProtocolManager.h"
 #import "GLMNetworkUtil.h"
 #import "WDIMClient.h"
+#import "GLMMessageSendNotifyService.h"
 
 
 #import "User.pb.h"
@@ -27,9 +28,22 @@ res.subCmd, \
 res.seq]
 
 
+// 根据service生成Notify map的key
+#define NOTIFY_MAP_KEY_FOR_SERVICE(service) [NSString stringWithFormat:@"%@,%@",\
+[service requestPBCMD],\
+[service requestPBSubCMD]]
+
+// 根据PB Res Header生成Notify service的 map的key
+#define NOTIFY_MAP_KEY_FOR_PBRES(res) [NSString stringWithFormat:@"%@,%@", \
+res.cmd, \
+res.subCmd]
+
+
 @interface GLMProtocolManager ()
 
 @property (nonatomic, strong) NSMutableDictionary *servicesMap;
+
+@property (nonatomic, strong) NSMutableDictionary *notifyServicesMap;
 
 - (GLMCS_Header *)CS_HeaderFromService:(GLMBaseNetworkService *)service;
 
@@ -45,11 +59,34 @@ res.seq]
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _self = [[GLMProtocolManager alloc] init];
-        _self.servicesMap = [NSMutableDictionary dictionary];
     });
     
     return _self;
 }
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self _initialze];
+    }
+    return self;
+}
+
+- (void)_initialze
+{
+    self.servicesMap = [NSMutableDictionary dictionary];
+    self.notifyServicesMap = [NSMutableDictionary dictionary];
+    GLMMessageSendNotifyService *sendNotify = [[GLMMessageSendNotifyService alloc] init];
+    
+    NSString *notifyKey = NOTIFY_MAP_KEY_FOR_SERVICE(sendNotify);
+    _notifyServicesMap[notifyKey] = sendNotify;
+    
+    
+    
+}
+
+
 
 #pragma mark Private Method For Assemble PB Data
 - (GLMCS_Header *)CS_HeaderFromService:(GLMBaseNetworkService *)service
@@ -191,6 +228,7 @@ res.seq]
     GLMBaseNetworkService *service = [_servicesMap objectForKey:retriveKey];
     if (service == nil) {
         // 说明没注册过，可能是个notify
+        [self tryToProcessPushedNotifyWithPBHeader:res];
     }
     else if (error) {
         service.completionBlock(nil, error);
@@ -224,6 +262,22 @@ res.seq]
     }
     
     return pbResHeader;
+}
+
+- (BOOL)tryToProcessPushedNotifyWithPBHeader:(CProtocolServerResp *)PBHeaderRes
+{
+    
+    NSString *notifyServiceKey = NOTIFY_MAP_KEY_FOR_PBRES(PBHeaderRes);
+    
+    GLMBaseNetworkService *notifyService = _notifyServicesMap[notifyServiceKey];
+    
+    if (notifyService) {
+        [notifyService processForPBResHeader:PBHeaderRes];
+        
+    }
+    
+    
+    return NO;
 }
 
 #pragma mark GCDAsyncSocketDelegate
