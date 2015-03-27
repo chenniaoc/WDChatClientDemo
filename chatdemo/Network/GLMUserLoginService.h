@@ -8,7 +8,7 @@
 
 #import "GLMBaseNetworkService.h"
 
-@interface GLMLoginService : GLMBaseNetworkService <GLMNetworkServiceProtocol>
+@interface GLMUserLoginService : GLMBaseNetworkService <GLMNetworkServiceProtocol>
 
 @property (nonatomic, strong) NSString *sid;
 

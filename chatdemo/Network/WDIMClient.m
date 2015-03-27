@@ -11,8 +11,8 @@
 //#import "WDUserLoginApi.h"
 #import "GLMCS_Header.h"
 #import "GLMHandShakeService.h"
-#import "GLMLoginService.h"
-#import "GLMSendMsgService.h"
+#import "GLMUserLoginService.h"
+#import "GLMMessageSendMsgService.h"
 #import "Im_base.pb.h"
 #import "User.pb.h"
 
@@ -107,18 +107,20 @@
 - (void)login;
 {
     
-    GLMLoginService *req = [[GLMLoginService alloc] init];
+    GLMUserLoginService *req = [[GLMUserLoginService alloc] init];
     req.sid = @"13042";
     req.uss = @"Wm85FefWB0mcZwbSvfZ8B0zgDSQjVl2kU2Fm3UWIJNpI3D";
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        NSLog(@"%@ \nerror:%@", responeObject, error);
         
+//        NSLog(@"%@", responeObject[@"uid"]);
     }];
 }
 
 - (void)sendMessage
 {
-    GLMSendMsgService *sendService = [[GLMSendMsgService alloc] init];
+    GLMMessageSendMsgService *sendService = [[GLMMessageSendMsgService alloc] init];
     
     [sendService requestWithCompletionBlock:^(id responeObject, NSError *error) {
         NSLog(@"%@", responeObject);

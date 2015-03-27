@@ -16,9 +16,4 @@
     return HEADER_CMD_HANDSHAKE;
 }
 
-//- (NSData *)packReqData
-//{
-//    return [self csHeaderData];
-//}
-
 @end

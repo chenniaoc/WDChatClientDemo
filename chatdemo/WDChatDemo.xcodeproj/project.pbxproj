@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		890C9CB31AC45D5800AEF9E3 /* GLMSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */; };
+		890C9CB31AC45D5800AEF9E3 /* GLMMessageSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */; };
 		894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
 		8975D5701AC18ECA009E02D5 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
 		8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
 		8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */; };
 		8975D57B1AC2F78A009E02D5 /* GLMHandShakeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */; };
-		8975D57E1AC2FFF8009E02D5 /* GLMLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57D1AC2FFF8009E02D5 /* GLMLoginService.m */; };
+		8975D57E1AC2FFF8009E02D5 /* GLMUserLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57D1AC2FFF8009E02D5 /* GLMUserLoginService.m */; };
 		8975D5801AC30302009E02D5 /* GLMNetworkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D57F1AC30302009E02D5 /* GLMNetworkUtil.m */; };
 		898D41ED1AB7C480004A4303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EC1AB7C480004A4303 /* main.m */; };
 		898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D41EF1AB7C480004A4303 /* AppDelegate.m */; };
@@ -26,6 +26,8 @@
 		898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D42161AB7C53F004A4303 /* WDIMClient.m */; };
 		898D421E1AB7CC6D004A4303 /* GLMOutputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */; };
 		89AC53831AC242E400D8C7C8 /* GLMCS_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */; };
+		89AD254F1AC4FF2C00F8854B /* GLMError.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AD254E1AC4FF2C00F8854B /* GLMError.m */; };
+		89CC30981AC4F8F600236010 /* GLMProtocolContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CC30971AC4F8F600236010 /* GLMProtocolContext.m */; };
 		89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43041AC0251D001DB012 /* Follow.pb.m */; };
 		89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43061AC0251D001DB012 /* Im_base.pb.m */; };
 		89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF43081AC0251D001DB012 /* Msg.pb.m */; };
@@ -43,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		890C9CB11AC45D5800AEF9E3 /* GLMSendMsgService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMSendMsgService.h; sourceTree = "<group>"; };
-		890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMSendMsgService.m; sourceTree = "<group>"; };
+		890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageSendMsgService.h; sourceTree = "<group>"; };
+		890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMMessageSendMsgService.m; sourceTree = "<group>"; };
 		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
 		894F99101AC436DD00F49B18 /* GLMProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolManager.h; sourceTree = "<group>"; };
 		894F99111AC436DD00F49B18 /* GLMProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolManager.m; sourceTree = "<group>"; };
@@ -57,8 +59,8 @@
 		8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMInputStreamData.m; sourceTree = "<group>"; };
 		8975D5791AC2F78A009E02D5 /* GLMHandShakeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMHandShakeService.h; sourceTree = "<group>"; };
 		8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMHandShakeService.m; sourceTree = "<group>"; };
-		8975D57C1AC2FFF8009E02D5 /* GLMLoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMLoginService.h; sourceTree = "<group>"; };
-		8975D57D1AC2FFF8009E02D5 /* GLMLoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMLoginService.m; sourceTree = "<group>"; };
+		8975D57C1AC2FFF8009E02D5 /* GLMUserLoginService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMUserLoginService.h; sourceTree = "<group>"; };
+		8975D57D1AC2FFF8009E02D5 /* GLMUserLoginService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMUserLoginService.m; sourceTree = "<group>"; };
 		8975D57F1AC30302009E02D5 /* GLMNetworkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMNetworkUtil.m; sourceTree = "<group>"; };
 		898D41E71AB7C480004A4303 /* WDChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		898D41EB1AB7C480004A4303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,6 +84,10 @@
 		898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMOutputStreamData.m; sourceTree = "<group>"; };
 		89AC53811AC242E400D8C7C8 /* GLMCS_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMCS_Header.h; sourceTree = "<group>"; };
 		89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMCS_Header.m; sourceTree = "<group>"; };
+		89AD254D1AC4FF2C00F8854B /* GLMError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMError.h; sourceTree = "<group>"; };
+		89AD254E1AC4FF2C00F8854B /* GLMError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMError.m; sourceTree = "<group>"; };
+		89CC30961AC4F8F600236010 /* GLMProtocolContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolContext.h; sourceTree = "<group>"; };
+		89CC30971AC4F8F600236010 /* GLMProtocolContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolContext.m; sourceTree = "<group>"; };
 		89FF43031AC0251D001DB012 /* Follow.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Follow.pb.h; sourceTree = "<group>"; };
 		89FF43041AC0251D001DB012 /* Follow.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Follow.pb.m; sourceTree = "<group>"; };
 		89FF43051AC0251D001DB012 /* Im_base.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Im_base.pb.h; sourceTree = "<group>"; };
@@ -114,15 +120,12 @@
 		891150591AC40A7E00A8D008 /* GLMServices */ = {
 			isa = PBXGroup;
 			children = (
+				894F67B91AC4E901005EE56F /* Message */,
+				894F67B81AC4E8F2005EE56F /* Common */,
+				894F67B71AC4E8DD005EE56F /* User */,
 				8975D5711AC21CC3009E02D5 /* GLMNetworkServiceProtocol.h */,
 				8975D5721AC21E62009E02D5 /* GLMBaseNetworkService.h */,
 				8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */,
-				8975D5791AC2F78A009E02D5 /* GLMHandShakeService.h */,
-				8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */,
-				8975D57C1AC2FFF8009E02D5 /* GLMLoginService.h */,
-				8975D57D1AC2FFF8009E02D5 /* GLMLoginService.m */,
-				890C9CB11AC45D5800AEF9E3 /* GLMSendMsgService.h */,
-				890C9CB21AC45D5800AEF9E3 /* GLMSendMsgService.m */,
 			);
 			name = GLMServices;
 			sourceTree = "<group>";
@@ -151,8 +154,39 @@
 				898D421D1AB7CC6D004A4303 /* GLMOutputStreamData.m */,
 				8975D5761AC2ED83009E02D5 /* GLMInputStreamData.h */,
 				8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */,
+				89CC30961AC4F8F600236010 /* GLMProtocolContext.h */,
+				89CC30971AC4F8F600236010 /* GLMProtocolContext.m */,
+				89AD254D1AC4FF2C00F8854B /* GLMError.h */,
+				89AD254E1AC4FF2C00F8854B /* GLMError.m */,
 			);
 			name = GLMCommon;
+			sourceTree = "<group>";
+		};
+		894F67B71AC4E8DD005EE56F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8975D57C1AC2FFF8009E02D5 /* GLMUserLoginService.h */,
+				8975D57D1AC2FFF8009E02D5 /* GLMUserLoginService.m */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		894F67B81AC4E8F2005EE56F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8975D5791AC2F78A009E02D5 /* GLMHandShakeService.h */,
+				8975D57A1AC2F78A009E02D5 /* GLMHandShakeService.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		894F67B91AC4E901005EE56F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */,
+				890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */,
+			);
+			name = Message;
 			sourceTree = "<group>";
 		};
 		898D41DE1AB7C480004A4303 = {
@@ -356,10 +390,12 @@
 				89FF430E1AC0251D001DB012 /* User.pb.m in Sources */,
 				89FF430B1AC0251D001DB012 /* Follow.pb.m in Sources */,
 				89FF430D1AC0251D001DB012 /* Msg.pb.m in Sources */,
-				8975D57E1AC2FFF8009E02D5 /* GLMLoginService.m in Sources */,
+				8975D57E1AC2FFF8009E02D5 /* GLMUserLoginService.m in Sources */,
 				8975D57B1AC2F78A009E02D5 /* GLMHandShakeService.m in Sources */,
-				890C9CB31AC45D5800AEF9E3 /* GLMSendMsgService.m in Sources */,
+				890C9CB31AC45D5800AEF9E3 /* GLMMessageSendMsgService.m in Sources */,
+				89AD254F1AC4FF2C00F8854B /* GLMError.m in Sources */,
 				898D41F31AB7C480004A4303 /* ViewController.m in Sources */,
+				89CC30981AC4F8F600236010 /* GLMProtocolContext.m in Sources */,
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */,
 				8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */,

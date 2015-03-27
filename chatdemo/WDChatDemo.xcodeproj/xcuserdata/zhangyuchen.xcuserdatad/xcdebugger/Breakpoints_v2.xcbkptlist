@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Network/GLMLoginService.m"
-            timestampString = "449076925.534189"
+            filePath = "Network/GLMProtocolManager.m"
+            timestampString = "449118860.490607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-processForPBResHeader:"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "-tryToParseRespFromData:error:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Network/GLMProtocolManager.m"
+            timestampString = "449118860.490607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "-tryToParseRespFromData:error:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

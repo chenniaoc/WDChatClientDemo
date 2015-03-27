@@ -69,10 +69,16 @@ res.seq]
         || ![service respondsToSelector:@selector(requestPBSubCMD)]) {
         return nil;
     }
+    
+    GLMProtocolContext *mpc = GLMGetProtocolContext();
+    
     [crb setCmd:[service requestPBCMD]];
     [crb setSubCmd:[service requestPBSubCMD]];
     [crb setSeq:service.seqNo];
     [crb setVersion:service.version];
+    if (mpc.userID != -1) {
+        [crb setUid:mpc.userID];
+    }
     [crb setSourceType:EConstSourceTypesClientTypeIphoneWeidian];
     
     PBGeneratedMessage *pbBody = nil;
@@ -175,16 +181,25 @@ res.seq]
     }
     
     NSData *pbHeader = [NSData dataWithBytes:&pbDataBodyBuffer length:originLength];
-    CProtocolServerResp *res = [CProtocolServerResp parseFromData:pbHeader];
+    
+    NSError *error = nil;
+    CProtocolServerResp *res = [self tryToParseRespFromData:pbHeader
+                                                      error:&error];
     
     NSString *retriveKey = MAP_KEY_FOR_PBRES(res);
     
-    id<GLMNetworkServiceProtocol> service = [_servicesMap objectForKey:retriveKey];
-    
-    if (service && [service respondsToSelector:@selector(processForPBResHeader:)]) {
-        [service processForPBResHeader:res];
-        [_servicesMap removeObjectForKey:retriveKey];
+    GLMBaseNetworkService *service = [_servicesMap objectForKey:retriveKey];
+    if (service == nil) {
+        // 说明没注册过，可能是个notify
     }
+    else if (error) {
+        service.completionBlock(nil, error);
+    }
+    else if (service && [service respondsToSelector:@selector(processForPBResHeader:)]) {
+        [service processForPBResHeader:res];
+    }
+    
+    [_servicesMap removeObjectForKey:retriveKey];
     
     return YES;
 }
@@ -197,8 +212,18 @@ res.seq]
 
 
 - (CProtocolServerResp *)tryToParseRespFromData:(NSData *)data
+                                          error:(NSError **)error
 {
-    return nil;
+    CProtocolServerResp *pbResHeader = nil;
+    pbResHeader = [CProtocolServerResp parseFromData:data];
+    
+    if (pbResHeader.code != GLM_RESPONSE_OK) {
+        *error = [NSError errorWithDomain:GLM_PROTOCOL_ERROR_DOMAIN
+                                     code:pbResHeader.code
+                                 userInfo:nil];
+    }
+    
+    return pbResHeader;
 }
 
 #pragma mark GCDAsyncSocketDelegate

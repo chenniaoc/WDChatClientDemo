@@ -1,5 +1,5 @@
 //
-//  GLMSendMsgService.h
+//  GLMMessageSendMsgService.h
 //  WDChatDemo
 //
 //  Created by YuchenZhang on 3/26/15.
@@ -8,7 +8,7 @@
 
 #import "GLMBaseNetworkService.h"
 
-@interface GLMSendMsgService : GLMBaseNetworkService
+@interface GLMMessageSendMsgService : GLMBaseNetworkService
 
 @property (nonatomic, assign) UInt64 from_uid;
 @property (nonatomic, assign) UInt64 to_uid;

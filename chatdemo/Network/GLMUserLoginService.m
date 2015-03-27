@@ -9,11 +9,12 @@
 #import "Im_base.pb.h"
 #import "User.pb.h"
 
-#import "GLMLoginService.h"
+#import "GLMUserLoginService.h"
 #import "GLMCS_Header.h"
 #import "GLMNetworkUtil.h"
+#import "GLMProtocolContext.h"
 
-@implementation GLMLoginService
+@implementation GLMUserLoginService
 
 - (id)requestPBCMD
 {
@@ -47,6 +48,8 @@
     NSData *pbBodyData = PBResHeader.protocolContent;
     CUserLoginResp *loginResp = [CUserLoginResp parseFromData:pbBodyData];
     if (loginResp) {
+        GLMProtocolContext *mpc = GLMGetProtocolContext();
+        mpc.userID = loginResp.uid;
         self.completionBlock(loginResp, nil);
         return YES;
     }
