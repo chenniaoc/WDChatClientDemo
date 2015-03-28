@@ -25,7 +25,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receviedNewMessage:)
-                                                 name:GLM_MESSAGE_NOTIFY_NOTIFICATION
+                                                 name:kGLMNotificationMessageNotify
                                                object:nil];
 //    [client startService];
     

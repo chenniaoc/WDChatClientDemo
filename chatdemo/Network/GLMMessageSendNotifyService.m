@@ -29,7 +29,7 @@
         if (self.completionBlock) {
             self.completionBlock(msgContent, nil);
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:GLM_MESSAGE_NOTIFY_NOTIFICATION object:msgContent.msgData];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kGLMNotificationMessageNotify object:msgContent];
         
         return YES;
     }

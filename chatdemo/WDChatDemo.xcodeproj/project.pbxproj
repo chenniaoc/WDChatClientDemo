@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		890C9CB31AC45D5800AEF9E3 /* GLMMessageSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */; };
 		894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
+		895F88FE1AC6207F00855C7B /* GLMNotificationForwardCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 895F88FD1AC6207F00855C7B /* GLMNotificationForwardCenter.m */; };
+		895F88FF1AC6221E00855C7B /* GLMNotificationForwardCenter.h in Sources */ = {isa = PBXBuildFile; fileRef = 895F88FC1AC6207F00855C7B /* GLMNotificationForwardCenter.h */; };
+		895F89001AC6221E00855C7B /* GLMNotificationForwardCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 895F88FD1AC6207F00855C7B /* GLMNotificationForwardCenter.m */; };
 		8975D5701AC18ECA009E02D5 /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893899D41AC029030003B0B2 /* ProtocolBuffers.framework */; };
 		8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */; };
 		8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8975D5771AC2ED83009E02D5 /* GLMInputStreamData.m */; };
@@ -156,6 +159,8 @@
 		894F99101AC436DD00F49B18 /* GLMProtocolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolManager.h; sourceTree = "<group>"; };
 		894F99111AC436DD00F49B18 /* GLMProtocolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMProtocolManager.m; sourceTree = "<group>"; };
 		894F99131AC442B600F49B18 /* GLMProtocolCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMProtocolCenter.h; sourceTree = "<group>"; };
+		895F88FC1AC6207F00855C7B /* GLMNotificationForwardCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMNotificationForwardCenter.h; sourceTree = "<group>"; };
+		895F88FD1AC6207F00855C7B /* GLMNotificationForwardCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMNotificationForwardCenter.m; sourceTree = "<group>"; };
 		8975D5711AC21CC3009E02D5 /* GLMNetworkServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLMNetworkServiceProtocol.h; path = ../ProtoBuf/GLMNetworkServiceProtocol.h; sourceTree = "<group>"; };
 		8975D5721AC21E62009E02D5 /* GLMBaseNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMBaseNetworkService.h; sourceTree = "<group>"; };
 		8975D5731AC21E62009E02D5 /* GLMBaseNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMBaseNetworkService.m; sourceTree = "<group>"; };
@@ -289,6 +294,8 @@
 		8911505B1AC40AEA00A8D008 /* GLMCommon */ = {
 			isa = PBXGroup;
 			children = (
+				895F88FC1AC6207F00855C7B /* GLMNotificationForwardCenter.h */,
+				895F88FD1AC6207F00855C7B /* GLMNotificationForwardCenter.m */,
 				898D42181AB7C889004A4303 /* cs_header.h */,
 				89AC53811AC242E400D8C7C8 /* GLMCS_Header.h */,
 				89AC53821AC242E400D8C7C8 /* GLMCS_Header.m */,
@@ -687,6 +694,7 @@
 				894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */,
 				898D41ED1AB7C480004A4303 /* main.m in Sources */,
 				898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */,
+				895F88FE1AC6207F00855C7B /* GLMNotificationForwardCenter.m in Sources */,
 				8975D5801AC30302009E02D5 /* GLMNetworkUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -748,6 +756,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895F88FF1AC6221E00855C7B /* GLMNotificationForwardCenter.h in Sources */,
+				895F89001AC6221E00855C7B /* GLMNotificationForwardCenter.m in Sources */,
 				89A3609D1AC5563F00214283 /* GLMMessageSendNotifyService.h in Sources */,
 				89A3609E1AC5563F00214283 /* GLMMessageSendNotifyService.m in Sources */,
 				89AD25A71AC5378E00F8854B /* Follow.pb.h in Sources */,
@@ -1023,7 +1033,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+					"$(SRCROOT)/../protolibs",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1046,7 +1056,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/zhangyuchen/Developer/git_repo/WDChatClientDemo/protolibs,
+					"$(SRCROOT)/../protolibs",
 				);
 				INFOPLIST_FILE = MacUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
