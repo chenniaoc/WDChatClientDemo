@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890433EF1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890433EE1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m */; };
+		890433F01AC6AE9F0035AF7B /* GLMMessageAckNotifyService.h in Sources */ = {isa = PBXBuildFile; fileRef = 890433ED1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.h */; };
+		890433F11AC6AE9F0035AF7B /* GLMMessageAckNotifyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890433EE1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m */; };
+		890433F41AC6B0F40035AF7B /* GLMMessageSendAckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890433F31AC6B0F40035AF7B /* GLMMessageSendAckService.m */; };
 		890C9CB31AC45D5800AEF9E3 /* GLMMessageSendMsgService.m in Sources */ = {isa = PBXBuildFile; fileRef = 890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */; };
 		894F99121AC436DD00F49B18 /* GLMProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 894F99111AC436DD00F49B18 /* GLMProtocolManager.m */; };
 		895F88FE1AC6207F00855C7B /* GLMNotificationForwardCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 895F88FD1AC6207F00855C7B /* GLMNotificationForwardCenter.m */; };
@@ -153,6 +157,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		890433ED1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageAckNotifyService.h; sourceTree = "<group>"; };
+		890433EE1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMMessageAckNotifyService.m; sourceTree = "<group>"; };
+		890433F21AC6B0F40035AF7B /* GLMMessageSendAckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageSendAckService.h; sourceTree = "<group>"; };
+		890433F31AC6B0F40035AF7B /* GLMMessageSendAckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMMessageSendAckService.m; sourceTree = "<group>"; };
 		890C9CB11AC45D5800AEF9E3 /* GLMMessageSendMsgService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLMMessageSendMsgService.h; sourceTree = "<group>"; };
 		890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLMMessageSendMsgService.m; sourceTree = "<group>"; };
 		893899D41AC029030003B0B2 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = ../protolibs/ProtocolBuffers.framework; sourceTree = "<group>"; };
@@ -338,6 +346,10 @@
 				890C9CB21AC45D5800AEF9E3 /* GLMMessageSendMsgService.m */,
 				89A3609A1AC5529200214283 /* GLMMessageSendNotifyService.h */,
 				89A3609B1AC5529200214283 /* GLMMessageSendNotifyService.m */,
+				890433ED1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.h */,
+				890433EE1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m */,
+				890433F21AC6B0F40035AF7B /* GLMMessageSendAckService.h */,
+				890433F31AC6B0F40035AF7B /* GLMMessageSendAckService.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -686,6 +698,7 @@
 				89CC30981AC4F8F600236010 /* GLMProtocolContext.m in Sources */,
 				898D41F01AB7C480004A4303 /* AppDelegate.m in Sources */,
 				8975D5781AC2ED83009E02D5 /* GLMInputStreamData.m in Sources */,
+				890433F41AC6B0F40035AF7B /* GLMMessageSendAckService.m in Sources */,
 				8975D5741AC21E62009E02D5 /* GLMBaseNetworkService.m in Sources */,
 				89A3609C1AC5529200214283 /* GLMMessageSendNotifyService.m in Sources */,
 				89FF430C1AC0251D001DB012 /* Im_base.pb.m in Sources */,
@@ -695,6 +708,7 @@
 				898D41ED1AB7C480004A4303 /* main.m in Sources */,
 				898D42171AB7C53F004A4303 /* WDIMClient.m in Sources */,
 				895F88FE1AC6207F00855C7B /* GLMNotificationForwardCenter.m in Sources */,
+				890433EF1AC6AE3F0035AF7B /* GLMMessageAckNotifyService.m in Sources */,
 				8975D5801AC30302009E02D5 /* GLMNetworkUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +770,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890433F01AC6AE9F0035AF7B /* GLMMessageAckNotifyService.h in Sources */,
+				890433F11AC6AE9F0035AF7B /* GLMMessageAckNotifyService.m in Sources */,
 				895F88FF1AC6221E00855C7B /* GLMNotificationForwardCenter.h in Sources */,
 				895F89001AC6221E00855C7B /* GLMNotificationForwardCenter.m in Sources */,
 				89A3609D1AC5563F00214283 /* GLMMessageSendNotifyService.h in Sources */,

@@ -8,6 +8,7 @@
 
 #import "GLMNotificationForwardCenter.h"
 #import "GLMMessageSendNotifyService.h"
+#import "GLMMessageAckNotifyService.h"
 
 /// 新消息通知
 NSString * const kGLMNotificationMessageNotify = @"GLM_MESSAGE_NOTIFY_NOTIFICATION";
@@ -65,6 +66,11 @@ res.subCmd]
     GLMMessageSendNotifyService *sendNotify = [[GLMMessageSendNotifyService alloc] init];
     NSString *notifyKey = NOTIFY_MAP_KEY_FOR_SERVICE(sendNotify);
     _notifyServicesMap[notifyKey] = sendNotify;
+    
+    
+    GLMMessageAckNotifyService *sendAckNotify = [[GLMMessageAckNotifyService alloc] init];
+    notifyKey = NOTIFY_MAP_KEY_FOR_SERVICE(sendAckNotify);
+    _notifyServicesMap[notifyKey] = sendAckNotify;
 }
 
 
