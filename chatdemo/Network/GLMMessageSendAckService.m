@@ -22,7 +22,7 @@
 
 - (PBGeneratedMessage *)generatePBBody
 {
-    CMsgAckContentBuilder cb = [CMsgAckContent builder];
+    CMsgAckContentBuilder *cb = [CMsgAckContent builder];
     
     cb.ackSourceType = self.ack_source_type;
     cb.ackUid = self.ack_uid;

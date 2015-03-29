@@ -10,6 +10,7 @@
 #import "GLMNetworkUtil.h"
 #import "WDIMClient.h"
 #import "GLMMessageSendNotifyService.h"
+#import "GLMHeatBeatService.h"
 
 
 #import "User.pb.h"
@@ -162,7 +163,7 @@ res.seq]
 {
     @synchronized(self)
     {
-        if (service.CS_HEADER_CMD == HEADER_CMD_HANDSHAKE) {
+        if (service.CS_HEADER_CMD == HEADER_CMD_HANDSHAKE || service.CS_HEADER_CMD == HEADER_CMD_KEEPALIVE) {
             return YES;
         }
         service.seqNo = [self generateSeqNo];
@@ -210,6 +211,21 @@ res.seq]
 }
 
 
+- (void)startHeartbreakSchedule
+{
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        GLMHeatBeatService * headerBeat = [[GLMHeatBeatService alloc] init];
+        NSLog(@"headerBeat finished");
+        [headerBeat requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        }];
+        
+        [self startHeartbreakSchedule];
+    });
+    
+}
+
 
 #pragma mark RAW Response Data Analysis
 
@@ -220,7 +236,7 @@ res.seq]
         return NO;
     }
     
-    if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE) {
+    if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE || parsedHeader.cmd == HEADER_CMD_KEEPALIVE) {
         return YES;
     }
     
@@ -237,7 +253,7 @@ res.seq]
         }
     }
 #endif
-    if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE) {
+    if (parsedHeader.cmd == HEADER_CMD_HANDSHAKE || parsedHeader.cmd == HEADER_CMD_KEEPALIVE) {
         return YES;
     }
     

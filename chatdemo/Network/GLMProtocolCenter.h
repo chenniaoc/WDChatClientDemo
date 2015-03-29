@@ -12,6 +12,7 @@
 #import "GLMError.h"
 #import "GLMBaseNetworkService.h"
 #import "GLMNotificationForwardCenter.h"
+#import "GLMMessageSendMsgService.h"
 
 
 

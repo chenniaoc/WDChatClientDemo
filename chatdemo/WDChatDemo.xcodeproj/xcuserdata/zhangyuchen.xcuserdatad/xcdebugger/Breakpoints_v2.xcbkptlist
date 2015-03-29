@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Network/GLMMessageSendMsgService.m"
-            timestampString = "449229509.259517"
+            filePath = "Vender/JSQMessagesDemo/DemoMessagesViewController.m"
+            timestampString = "449335090.663972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-processForPBResHeader:"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-didReceiveMessageNotification:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

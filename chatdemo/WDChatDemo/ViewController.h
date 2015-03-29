@@ -18,5 +18,7 @@
 
 -(IBAction)readData:(id)sender;
 
+- (IBAction)gotoChat:(id)sender;
+
 @end
 

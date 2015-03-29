@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "GLMProtocolCenter.h"
 #import "WDIMClient.h"
+#import "GLMProtocolManager.h"
+#import "Msg.pb.h"
+
 
 @interface AppDelegate ()
 
@@ -46,7 +49,9 @@
 
 - (void)receviedNewMessage:(NSNotification *)nofity
 {
-    _chatMessageView.stringValue = [NSString stringWithFormat:@"%@\n%@",_chatMessageView.stringValue, nofity.object];
+    
+    CMsgPBContent *msgContent = nofity.object;
+    _chatMessageView.stringValue = [NSString stringWithFormat:@"%@\n%@",_chatMessageView.stringValue, msgContent.msgData];
 
 }
 
@@ -57,6 +62,8 @@
 - (IBAction)handShake:(id)sender
 {
     [[WDIMClient instance] handshake];
+    
+    
 }
 
 - (IBAction)loginClicked:(id)sender
@@ -86,6 +93,8 @@
                                         [alert beginSheetModalForWindow:_window completionHandler:^(NSModalResponse returnCode) {
                                             
                                         }];
+                                        
+                                        [[GLMProtocolManager sharedManager] startHeartbreakSchedule];
                                     }
                                     
     }];

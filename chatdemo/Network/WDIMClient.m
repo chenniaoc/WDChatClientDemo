@@ -95,6 +95,8 @@
         
     }];
     
+    
+//    [[GLMProtocolManager sharedManager] startHeartbreakSchedule];
 //    return;
 //    WDHandshakeAPI *handshakeApi = [[WDHandshakeAPI alloc] init];
 //    NSData *handshakeData = [handshakeApi headerData];
@@ -113,7 +115,7 @@
     
     [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
         NSLog(@"%@ \nerror:%@", responeObject, error);
-        
+        [[GLMProtocolManager sharedManager] startHeartbreakSchedule];
 //        NSLog(@"%@", responeObject[@"uid"]);
     }];
 }

@@ -27,6 +27,11 @@
             self = [self init];
             self.cmd = HEADER_CMD_LOGIN;
             break;
+            
+        case HEADER_CMD_KEEPALIVE:
+            self = [self init];
+            self.cmd = HEADER_CMD_KEEPALIVE;
+            break;
 
         default:
             self = [self init];

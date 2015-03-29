@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WDIMClient.h"
+#import "DemoMessagesViewController.h"
 
 @interface ViewController ()
 
@@ -47,4 +48,18 @@
     [[WDIMClient instance] sendMessage];
 }
 
+- (IBAction)gotoChat:(id)sender
+{
+    DemoMessagesViewController *vc = [DemoMessagesViewController messagesViewController];
+    vc.delegateModal = self;
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)didDismissJSQDemoViewController:(DemoMessagesViewController *)vc
+{
+    [self dismissViewControllerAnimated:vc completion:^{
+        
+    }];
+}
 @end

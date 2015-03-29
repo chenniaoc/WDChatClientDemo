@@ -37,6 +37,8 @@
  */
 - (void)startRequestWithService:(GLMBaseNetworkService *)service;
 
+- (void)startHeartbreakSchedule;
+
 
 /**
  *  生成每次service的唯一Sequence Number
