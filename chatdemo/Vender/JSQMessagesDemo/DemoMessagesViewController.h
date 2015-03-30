@@ -41,8 +41,12 @@
 
 @property (strong, nonatomic) DemoModelData *demoData;
 
+@property (nonatomic, assign) UInt64 to_UID;
+
 - (void)receiveMessagePressed:(UIBarButtonItem *)sender;
 
 - (void)closePressed:(UIBarButtonItem *)sender;
+
+
 
 @end

@@ -50,10 +50,45 @@
 
 - (IBAction)gotoChat:(id)sender
 {
-    DemoMessagesViewController *vc = [DemoMessagesViewController messagesViewController];
-    vc.delegateModal = self;
-    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:nc animated:YES completion:nil];
+    
+    __weak ViewController *weakSelf = self;
+    
+    
+    
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"跟谁聊"
+                                                                message:@"输入聊天对象im uid"
+                                                         preferredStyle:UIAlertControllerStyleAlert];
+
+    
+    [ac addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"im uid";
+    }];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK"
+                                                     style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction *action) {
+                                                       UITextField *uidF = [ac.textFields objectAtIndex:0];
+                                                       NSString *uidStr = uidF.text;
+                                                       if (!uidStr || [uidStr isEqualToString:@""]) {
+                                                           uidStr = @"7593173468933068660";
+                                                       }
+                                                       
+                                                       DemoMessagesViewController *vc = [DemoMessagesViewController messagesViewController];
+                                                       vc.to_UID = [uidStr longLongValue];
+                                                       vc.delegateModal = weakSelf;
+                                                       UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+                                                       [weakSelf presentViewController:nc animated:YES completion:nil];
+        
+    }];
+    
+    
+    
+    [ac addAction:action];
+    
+    [self presentViewController:ac animated:YES completion:^{
+        
+    }];
+    
 }
 
 - (void)didDismissJSQDemoViewController:(DemoMessagesViewController *)vc

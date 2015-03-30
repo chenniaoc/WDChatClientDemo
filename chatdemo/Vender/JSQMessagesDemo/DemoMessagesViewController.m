@@ -314,7 +314,7 @@
     
     GLMMessageSendMsgService *sendService = [[GLMMessageSendMsgService alloc] init];
     
-    sendService.to_uid = 7593173468933068660;
+    sendService.to_uid = self.to_UID;
     sendService.messageContent = text;
     sendService.time = [date timeIntervalSince1970];
     
