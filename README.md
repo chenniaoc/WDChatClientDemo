@@ -14,16 +14,18 @@
 
  * 模拟登录请求(主动发起的请求)
 
-step 1.创建一个service继承自GLMBaseNetworkService
+*step 1.创建一个service继承自GLMBaseNetworkService*
 
 ```objc
-		@interface GLMUserLoginService : GLMBaseNetworkService<GLMNetworkServiceProtocol>	 
-			//输入参数 （userid）	 
-			@property (nonatomic, strong) NSString *sid;  
-			//输入参数 （wduss）	 
-			@property (nonatomic, strong) NSString *uss;  
-		@end	
+///接口
+@interface GLMUserLoginService : GLMBaseNetworkService<GLMNetworkServiceProtocol>	 
+//输入参数 （userid）	 
+@property (nonatomic, strong) NSString *sid;  
+//输入参数 （wduss）	 
+@property (nonatomic, strong) NSString *uss;  
+@end	
 		
+/// 实现
 @implementation GLMUserLoginService
 
 /**
@@ -100,7 +102,86 @@ step 1.创建一个service继承自GLMBaseNetworkService
 		
 ```
 
-	
+*step 2.caller负责new一个GLMUserLoginService，这里假如调用者是WDIMClient.h*
+```objc
+- (void)loginWithUserID:(NSString *)userID
+                    uss:(NSString *)uss
+             completion:(GLMCompletionBlock)completion
+{
+	// create a new instance of GLMUserLoginService
+    GLMUserLoginService *req = [[GLMUserLoginService alloc] init];
+    // set input parameters
+    req.sid = userID;
+    req.uss = uss;
+    // if has completion block for callback
+    if (completion) {
+        [req requestWithCompletionBlock:completion];
+        return;
+    }
+    [req requestWithCompletionBlock:^(id responeObject, NSError *error) {
+        NSLog(@"%@ \nerror:%@", responeObject, error);
+    }];
+}
+
+```
+
+ * 模拟获取新消息的notify(被动接收服务器推送过来的notify)
+*step 1.创建一个service继承自GLMBaseNetworkServic*
+```objc
+/// notify 声明。
+@interface GLMMessageSendNotifyService : GLMBaseNetworkService
+@end
+/// 
+@implementation GLMMessageSendNotifyService
+/// 对应协议的PB CMD
+- (id)requestPBCMD
+{
+    return @"msg";
+}
+/// 对应协议的PB SUB_CMD
+- (id)requestPBSubCMD
+{
+    return @"send_notify";
+}
+/// 负责解析服务器传递过来的PbHeader
+- (BOOL)processForPBResHeader:(CProtocolServerResp*)PBResHeader
+{
+    NSData *pbBodyData = PBResHeader.protocolContent;
+    CMsgPBContent *msgContent = [CMsgPBContent parseFromData:pbBodyData];
+    if (msgContent) {
+        if (self.completionBlock) {
+            self.completionBlock(msgContent, nil);
+        }
+        /// 重要，发送在(step-2中)GLMNotificationForwardCenter定义的广播名字 kGLMNotificationMessageNotify
+        [[NSNotificationCenter defaultCenter] postNotificationName:kGLMNotificationMessageNotify object:msgContent];
+        return YES;
+    }
+    return NO;
+}
+@end
+```
+*step 2.在GLMNotificationForwardCenter加入新的notify service*
+```objc
+/// GLMNotificationForwardCenter.h
+/// 加入外部声明-新消息通知的广播key
+extern NSString * const kGLMNotificationMessageNotify;
+
+/// GLMNotificationForwardCenter.m
+/// 消息应答通知的内部定义
+NSString * const kGLMNotificationMessageAckNotify = @"GLMNotificationMessageAckNotify";
+
+/// 此方法中加入新的service
+- (void)_initialize
+{
+	/// 往_notifyServicesMap里加入notify service
+    GLMMessageSendNotifyService *sendNotify = [[GLMMessageSendNotifyService alloc] init];
+    /// 生成unique的hash key
+    NSString *notifyKey = NOTIFY_MAP_KEY_FOR_SERVICE(sendNotify);
+    _notifyServicesMap[notifyKey] = sendNotify;
+}
+```
+ 
+
 ####source tree 
 
  
