@@ -14,9 +14,8 @@
 
  * 模拟登录请求(主动发起的请求)
 
-	1. 创建一个service继承自GLMBaseNetworkService
-     	
-	
+step 1.创建一个service继承自GLMBaseNetworkService
+
 ```objc
 		@interface GLMUserLoginService : GLMBaseNetworkService<GLMNetworkServiceProtocol>	 
 			//输入参数 （userid）	 
@@ -25,10 +24,6 @@
 			@property (nonatomic, strong) NSString *uss;  
 		@end	
 		
-```
-
-	2. 创建一个service继承自GLMBaseNetworkService
-```objc
 @implementation GLMUserLoginService
 
 /**
