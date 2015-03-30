@@ -17,8 +17,8 @@
 	1. 创建一个service继承自GLMBaseNetworkService
      	
 	
-```
-		@interface GLMUserLoginService : GLMBaseNetworkService 	    	<GLMNetworkServiceProtocol>	 
+```objc
+		@interface GLMUserLoginService : GLMBaseNetworkService<GLMNetworkServiceProtocol>	 
 			//输入参数 （userid）	 
 			@property (nonatomic, strong) NSString *sid;  
 			//输入参数 （wduss）	 
@@ -39,14 +39,14 @@
     
  
   
-  |Directory Name         | Comment   			|
-  |------------------------|-----------------------|
-  |[1].GLMProtocolCenter       | Root目录   			|
+  |Directory Name          | Comment   							|
+  |------------------------|-------------------------------------------------------------|
+  |[1].GLMProtocolCenter   | Root目录   						|
   |--> [2].GLMCommon    | 公共操作实现，协议Header，二进制读写，etc   			|
-  |--> [2].GLMServices  | 协议请求的Service|
-  |------> [3].Common| 通用协议请求的具体Service实现，心跳,握手,etc|
-  |------> [3].Message | IM消息相关协议请求的具体Service实现，发送消息,接收消息的notify，发送消息ack,etc|
-  |------> [3].User | User信息相关协议请求的具体Service实现，用户登录,踢下线notify,etc|
+  |--> [2].GLMServices  | 协议请求的Service						|
+  |------> [3].Common   | 通用协议请求的具体Service实现，心跳,握手,etc|
+  |------> [3].Message  | IM消息相关协议请求的具体Service实现，发送消息,接收消息的notify，发送消息ack,etc|
+  |------> [3].User     | User信息相关协议请求的具体Service实现，用户登录,踢下线notify,etc|
 
 ```
 ├── GLMProtocolCenter
