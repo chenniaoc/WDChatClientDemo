@@ -313,7 +313,7 @@
     
     
     GLMMessageSendMsgService *sendService = [[GLMMessageSendMsgService alloc] init];
-    
+    sendService.from_uid = GLMGetProtocolContext().userID;
     sendService.to_uid = self.to_UID;
     sendService.messageContent = text;
     sendService.time = [date timeIntervalSince1970];

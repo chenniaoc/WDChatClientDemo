@@ -30,7 +30,6 @@
             self.completionBlock(msgContent, nil);
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:kGLMNotificationMessageNotify object:msgContent];
-        
         return YES;
     }
     return NO;

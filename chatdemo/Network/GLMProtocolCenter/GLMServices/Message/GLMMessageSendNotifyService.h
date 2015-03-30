@@ -9,5 +9,4 @@
 #import "GLMBaseNetworkService.h"
 
 @interface GLMMessageSendNotifyService : GLMBaseNetworkService
-
 @end
