@@ -4,7 +4,8 @@
 ###Contents
  1. Demo说明
  2. Demo演示
- 3. Source目录结构
+ 3. Code Sample
+ 4. Source目录结构
  
 
 ####Demo说明
@@ -32,8 +33,15 @@ ProtoBuf描述的业务头部数据    | ProtoBuf描述的业务数据
  * 主动发起请求的回掉。
  * 调用方便性，只需几行代码简单支持各种UI交互库。
 
-
 ####Demo演示
+iOS_UI端。
+
+Mac_UI端。
+
+
+
+
+####Code Sample
 
  * 模拟登录请求(主动发起的请求)
 
