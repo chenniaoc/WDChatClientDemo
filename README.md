@@ -34,9 +34,10 @@ ProtoBuf描述的业务头部数据    | ProtoBuf描述的业务数据
  * 调用方便性，只需几行代码简单支持各种UI交互库。
 
 ####Demo演示
-iOS_UI端。
+iOS_UI端与Mac_UI端对聊
 
-Mac_UI端。
+![iOS_UI端与Mac_UI端对聊](https://raw.githubusercontent.com/chenniaoc/WDChatClientDemo/master/ChatDemo.gif)
+
 
 
 
