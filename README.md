@@ -8,6 +8,24 @@
  
 
 ####Demo说明
+与IM_Server端通信协议的OBJC实现。
+通信建立在TCP之上，数据包的结构由2大部分组成：
+
+头固定长28字节  	   | var length
+-------------------|-------------
+struct CS_HEADER   | ProtoBuf数据
+
+其中ProtoBuf数据又分为两部分
+
+固定格式的PB_HEAEDER  	   | 可变长度的PB Body
+---------------------------|----------------------
+ProtoBuf描述的业务头部数据    | ProtoBuf描述的业务数据 
+
+
+
+
+核心功能
+ * 主动向服务器发起请求
 
 
 ####Demo演示
@@ -126,6 +144,7 @@
 ```
 
  * 模拟获取新消息的notify(被动接收服务器推送过来的notify)
+ 
 *step 1.创建一个service继承自GLMBaseNetworkServic*
 ```objc
 /// notify 声明。
